@@ -1,0 +1,91 @@
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+C:\Users\luqman ahmed\OneDrive\Documents\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+C:\Users\luqma\OneDrive\Desktop\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+E:\Uni data\fyp\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+E:\Uni data\fyp\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+E:\Uni data\fyp\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+E:\Uni data\fyp\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\demoELiving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+E:\Uni data\fyp\demoELiving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+D:\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+D:\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+D:\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+D:\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+D:\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+D:\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+E:\Uni data\fyp\FYP holidays\demoELiving(marked)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
