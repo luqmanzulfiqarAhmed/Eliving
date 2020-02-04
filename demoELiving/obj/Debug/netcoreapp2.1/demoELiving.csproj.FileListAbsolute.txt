@@ -89,3 +89,17 @@ E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\o
 E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
 E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
 E:\Uni data\fyp\FYP holidays\demoELiving(marked working all three)\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+e:\FYP\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+e:\FYP\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+e:\FYP\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+e:\FYP\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+e:\FYP\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb

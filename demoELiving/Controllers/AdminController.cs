@@ -50,8 +50,8 @@ namespace demoELiving.Controllers
             if (adminData.ToString() == "[]")
             {
                  await context.insert(admin);
-                 adminData = (Admin)adminData;
-                 return "created, against id: " +adminData;
+                 //adminData = (Admin)adminData;
+                 return "created, against id: " +admin.adminId;
             }
             
             return "Not created, id already exist"+adminData;

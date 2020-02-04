@@ -13587,11 +13587,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Uni data\\fyp\\FYP holidays\\demoELiving(marked working all three)\\demoELiving\\demoELiving.csproj",
+      "projectUniqueName": "e:\\FYP\\Eliving\\demoELiving\\demoELiving.csproj",
       "projectName": "demoELiving",
-      "projectPath": "E:\\Uni data\\fyp\\FYP holidays\\demoELiving(marked working all three)\\demoELiving\\demoELiving.csproj",
+      "projectPath": "e:\\FYP\\Eliving\\demoELiving\\demoELiving.csproj",
       "packagesPath": "C:\\Users\\luqman ahmed\\.nuget\\packages\\",
-      "outputPath": "E:\\Uni data\\fyp\\FYP holidays\\demoELiving(marked working all three)\\demoELiving\\obj\\",
+      "outputPath": "e:\\FYP\\Eliving\\demoELiving\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
