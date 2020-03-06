@@ -51,10 +51,10 @@ namespace demoELiving.Controllers
             {
                  await context.insert(admin);
                  //adminData = (Admin)adminData;
-                 return "created, against id: " +admin.adminId;
+                 return {"created, against id: " +admin.adminId};
             }
             
-            return "Not created, id already exist"+adminData;
+            return {"Not created, id already exist"+adminData};
         }
          
 
