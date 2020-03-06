@@ -49,8 +49,8 @@ namespace demoELiving.Controllers
             adminData= JsonConvert.SerializeObject(adminData);
             if (adminData.ToString() == "[]")
             {
-                 await context.insert(admin);
-                 //adminData = (Admin)adminData;
+                 await context.insert(admin);                 
+                 
                  return true;
             }
             
