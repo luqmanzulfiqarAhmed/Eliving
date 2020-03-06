@@ -42,7 +42,7 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost(Name = "AdminRegister")]
-        public async Task <string > registerAdmin([FromBody]Admin admin)//ActionResult<Admin>
+        public async Task <bool > registerAdmin([FromBody]Admin admin)//ActionResult<Admin>
         {
             
             var adminData = await context.retrieve(admin.adminId);
@@ -51,10 +51,10 @@ namespace demoELiving.Controllers
             {
                  await context.insert(admin);
                  //adminData = (Admin)adminData;
-                 return {"created, against id: " +admin.adminId};
+                 return true;
             }
             
-            return {"Not created, id already exist"+adminData};
+            return false;
         }
          
 
