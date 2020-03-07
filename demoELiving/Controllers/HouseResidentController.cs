@@ -49,7 +49,7 @@ namespace demoELiving.Controllers
 
 
         [HttpPost("{houseResident}", Name = "registerHouseResident")]
-        public async Task <ActionResult<HouseResident>> registerHouseResident(HouseResident houseResident)
+        public async Task <ActionResult<HouseResident>> registerHouseResident([FromBody]HouseResident houseResident)
         {            
           await  context.insert(houseResident);
             return CreatedAtAction("registerHouseResident", new HouseResident { houseResidentID = houseResident.houseResidentID }, houseResident);//just telling that this HouseResident is registered with this id

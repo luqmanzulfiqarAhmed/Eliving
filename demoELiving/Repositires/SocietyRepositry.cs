@@ -49,20 +49,20 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieve(string id)
         {
-            var society = Builders<Society>.Filter.Eq("Id", id);
+            var society = Builders<Society>.Filter.Eq("societyId", id);
 
             return await collection.Find(society).ToListAsync();
         }
 
         public async Task<object> retrieveAll(string Id)
         {
-            var society = Builders<Society>.Filter.Eq("HousingSocietyID", Id);
+            var society = Builders<Society>.Filter.Eq("societyId", Id);
             return await collection.Find(society).ToListAsync();
         }
 
         public async Task<object> update(string id, object society)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.AdminID == id, (Society)society);
+            await collection.ReplaceOneAsync(ZZ => ZZ.adminEmail == id, (Society)society);
             return true;
         }
     }

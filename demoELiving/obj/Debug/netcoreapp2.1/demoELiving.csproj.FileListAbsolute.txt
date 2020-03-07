@@ -103,3 +103,17 @@ e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
 e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
 e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
 e:\FYP\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.deps.json
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.json
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.dll
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\bin\Debug\netcoreapp2.1\demoELiving.pdb
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.csproj.CoreCompileInputs.cache
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.dll
+C:\Users\luqman ahmed\Documents\GitHub\Eliving\demoELiving\obj\Debug\netcoreapp2.1\demoELiving.pdb

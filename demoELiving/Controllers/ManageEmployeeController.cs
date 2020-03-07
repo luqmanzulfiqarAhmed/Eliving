@@ -25,32 +25,28 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(employeeData);
         }
 
-        [HttpGet("{id}", Name = "EmployeeData")]
-        public async Task<string> getEmployeeData(string id)
-        {
+         
 
-            var employeeData = await context.retrieve(id);
-            if (employeeData == null)
-                return null;
-            return JsonConvert.SerializeObject(employeeData);
-        }
-
-        [HttpPost("{societyID},{manageEmployee}", Name = "uploadEmployee")]
-        public async Task<ActionResult<ManageTransport>> uploadEmployee(string societyID, ManageEmployee manageEmployee)
-        {
-            if (societyID == manageEmployee.societyId)
+        [HttpPost( Name = "registerEmployee")]
+        public  async Task <bool> registerEmployee([FromBody] ManageEmployee manageEmployee)
+        {            
+            var manageEmployeeData = await context.retrieve(manageEmployee.employeeEmail);
+            manageEmployeeData= JsonConvert.SerializeObject(manageEmployeeData);
+            if (manageEmployeeData.ToString() == "[]")
             {
-
-                await context.insert(manageEmployee);
-                return CreatedAtAction("uploadSchdule", new ManageEmployee { employeeId = manageEmployee.employeeId}, manageEmployee);//just telling that this HouseResident is registered with this id
+                 await context.insert(manageEmployee);                 
+                 return true;
             }
-            return BadRequest();
+            
+            return false;
+
+                
         }
 
         [HttpPut( Name = "updateEmployee")]
         public async Task<ActionResult> updateEmployee(string adminId, string societyId, ManageEmployee manageEmployee)
         {
-            if (adminId != manageEmployee.adminID && societyId != manageEmployee.societyId)
+            if (adminId != manageEmployee.employeeEmail && societyId != manageEmployee.societyId)
             {
                 return BadRequest();
             }

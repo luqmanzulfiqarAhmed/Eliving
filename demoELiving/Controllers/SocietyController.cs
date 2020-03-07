@@ -22,30 +22,39 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost(Name = "SocietyRegister")]
-        public async Task<ActionResult<Society>> registerSociety(Society society)
+        public async Task <bool > registerSociety([FromBody]Society society)
         {
+                     
             
-            await context.insert(society);
-            return CreatedAtAction("SocietyRegister", new Society { SocietyID = society.SocietyID }, society);//just telling that society is registered with this id
+            var societyData = await context.retrieve(society.societyId);
+            societyData= JsonConvert.SerializeObject(societyData);
+            if (societyData.ToString() == "[]")
+            {
+                 await context.insert(society);
+                 //adminData = (Admin)adminData;
+                 return true;
+            }
+            
+            return false;
         }
         [HttpGet("{id}", Name = "SocityData")]
-        public async Task<string> getSocityData(string id)
+        public async Task<IActionResult> getSocityData(string id)
         {
             var societyData = await context.retrieve(id);
             if (societyData == null)
                 return null;
-            return JsonConvert.SerializeObject(societyData);
+            return Ok(societyData);
         }
         [HttpPut( Name = "UpdateProfileSociety")]
-        public async Task <ActionResult> updateAdminProfile(string adminId, string societyId, Society society)
+        public async Task <bool> updateSocietyProfile(string adminEmail, string societyId, Society society)
         {
-            if (adminId != society.AdminID && societyId != society.SocietyID)
+            if (adminEmail != society.adminEmail && societyId != society.societyId)
             {
-                return BadRequest();
+                return true;
             }
 
             await context.update(societyId, society);
-            return NoContent();
+            return false;
         }
 
 

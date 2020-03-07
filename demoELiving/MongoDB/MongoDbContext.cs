@@ -15,9 +15,7 @@ namespace demoELiving.MongoDB
         private MongoDbContext(IConfiguration config)
         {
             string connectionString =
-  @"mongodb://smarsocietdb:OKifU92PfSKV8fLHs3gcNI9T58lc5NrzYwT7zwmJ
-  PwzUNqc6fDz00fbdvGs8iNDXBUEUtSx3LnVOloouJii6fg==
-  @smarsocietdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
+@"mongodb://smarsocietdb:OKifU92PfSKV8fLHs3gcNI9T58lc5NrzYwT7zwmJPwzUNqc6fDz00fbdvGs8iNDXBUEUtSx3LnVOloouJii6fg==@smarsocietdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
             MongoClientSettings settings = MongoClientSettings.FromUrl(
               new MongoUrl(connectionString)
             );

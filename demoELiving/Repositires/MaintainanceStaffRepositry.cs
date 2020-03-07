@@ -1,4 +1,4 @@
-﻿using demoELiving.Models;
+using demoELiving.Models;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using System;
@@ -10,18 +10,18 @@ using Newtonsoft.Json;
 namespace demoELiving.Repositires
 
 {
-    public class AdminRepositry: InterfaceDataBase
+    public class MaintainanceStaffRepositry: InterfaceDataBase
     {
 
         private MongoDbContext dbContext = null;
-        public AdminRepositry(IConfiguration config)
+        public MaintainanceStaffRepositry(IConfiguration config)
         {
 
             dbContext = MongoDbContext.getMongoDbContext(config);//geting singletone object of database
-            collection = dbContext.getDataBase().GetCollection<Admin>("collection");//use singletone object to get database 
+            collection = dbContext.getDataBase().GetCollection<ManageMaintainanceStaff>("collection");//use singletone object to get database 
             //and call that database to get collection of Admin
         }
-        private readonly IMongoCollection<Admin> collection;
+        private readonly IMongoCollection<ManageMaintainanceStaff> collection;
 
         public async Task<object> retriveAllData()
         {            
@@ -37,27 +37,27 @@ namespace demoELiving.Repositires
 
         public async Task<object> insert(object obj)
         {           
-             Admin admin = (Admin)obj;                                               
-                await collection.InsertOneAsync((Admin)admin);
+             ManageMaintainanceStaff staff = (ManageMaintainanceStaff)obj;                                               
+                await collection.InsertOneAsync(staff);
                 return true;
 
         }
 
         public async Task<object> retrieve(string adminEmail)
         {
-            var admin = Builders<Admin>.Filter.Eq("adminEmail", adminEmail);            
-            return  await collection.Find(admin).ToListAsync();
+            var staff = Builders<ManageMaintainanceStaff>.Filter.Eq("adminEmail", adminEmail);            
+            return  await collection.Find(staff).ToListAsync();
         }
 
         public async Task<object> retrieveAll(string societyId)
         {
-            var admin = Builders<Admin>.Filter.Eq("HousingSocietyID", societyId);
-            return await collection.Find(admin).ToListAsync();
+            var staff = Builders<ManageMaintainanceStaff>.Filter.Eq("HousingSocietyID", societyId);
+            return await collection.Find(staff).ToListAsync();
         }
 
         public async Task<object> update(string id, object admin)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.adminEmail == id, (Admin)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == id, (ManageMaintainanceStaff)admin);
             return true;
         }
     }
