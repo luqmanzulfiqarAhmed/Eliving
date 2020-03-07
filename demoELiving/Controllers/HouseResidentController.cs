@@ -22,10 +22,8 @@ namespace demoELiving.Controllers
         [HttpGet(Name = "AllResidentsData")]
         public async Task<string> getAllResidentsData()//all residents of each housing society
         {
-
             var residentData = await context.retriveAllData();
-            return JsonConvert.SerializeObject(residentData);
-            
+            return JsonConvert.SerializeObject(residentData);            
         }
 
         [Route("[action]/{societyId}")]
@@ -46,8 +44,6 @@ namespace demoELiving.Controllers
                 return null;
             return JsonConvert.SerializeObject(houseResidentData);
         }
-
-
         [HttpPost("{houseResident}", Name = "registerHouseResident")]
         public async Task <ActionResult<HouseResident>> registerHouseResident([FromBody]HouseResident houseResident)
         {                            
@@ -62,7 +58,7 @@ namespace demoELiving.Controllers
                 return BadRequest();
             }
             await context.update(houseResidentId, houseResident);
-            return NoContent();
+            return NoContent();        
         }
     }
 }
