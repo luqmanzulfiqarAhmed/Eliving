@@ -36,7 +36,7 @@ namespace demoELiving.Models
         public string admindateofBirth { get; set; }
       
       [BsonElement("societyID")]
-        public string HousingSocietyID { get; set; }
+        public string societyID { get; set; }
 
 
         public Admin()
