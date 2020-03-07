@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 
 using demoELiving.Repositires;
 using demoELiving.Models;
@@ -73,7 +70,8 @@ namespace demoELiving.Controllers
            await context.update(id, admin);
             return Ok(admin);
         }
-
+    }
+}
 
         //[HttpGet]
         ////http://localhost:5000/api/Admin
@@ -104,5 +102,4 @@ namespace demoELiving.Controllers
         //    return CreatedAtRoute( new { id = book.Id }, book);
         //}
 
-    }
-}
+    

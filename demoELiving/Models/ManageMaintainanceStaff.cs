@@ -28,23 +28,23 @@ public class ManageMaintainanceStaff{
 
 
             [BsonElement("mStaffLastName")]
-        string mStaffLastName { get; set; }
+      public  string mStaffLastName { get; set; }
             [BsonElement("mStaffCNIC")]
-        string mStaffCNIC { get; set; }
+      public  string mStaffCNIC { get; set; }
 
             [BsonElement("mStaffPhoneNo")]
-        string mStaffPhoneNo { get; set; }
+       public string mStaffPhoneNo { get; set; }
             [BsonElement("mStaffType")]
-        string mStaffType { get; set; }
+      public  string mStaffType { get; set; }
             [BsonElement("mStaffEmail")]
-        string mStaffEmail { get; set; }
+      public  string mStaffEmail { get; set; }
 
             [BsonElement("mStaffhomeAddress")]
-        string mStaffhomeAddress { get; set; }
-            [BsonElement("mStaffDescription")]
-        string mStaffDescription { get; set; }
+      public  string mStaffhomeAddress { get; set; }
+    //         [BsonElement("mStaffDescription")]
+    //  public   string mStaffDescription { get; set; }
             [BsonElement("DateofBirth")]
-        string DateofBirth { get; set; }
+     public   string DateofBirth { get; set; }
 
 
 

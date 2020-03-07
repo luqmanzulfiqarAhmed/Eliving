@@ -35,7 +35,8 @@ namespace demoELiving
               
             services.AddScoped<EmergencyResponseRepositry>();
 
-              
+            services.AddScoped<MaintainanceStaffRepositry>();  
+            
             services.AddScoped<GraveBookRepositry>();
               
             services.AddScoped<HallBookRepositry>();

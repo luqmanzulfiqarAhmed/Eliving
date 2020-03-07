@@ -33,8 +33,8 @@ namespace demoELiving.Models
       [BsonElement("homeAddress")]
       public string homeAddress { get; set; } 
 
-      [BsonElement("employeeDescription")]
-      public string employeeDescription { get; set; } 
+      // [BsonElement("employeeDescription")]
+      // public string employeeDescription { get; set; } 
       
       [BsonElement("employeeDateofBirth")]
       public string employeeDateofBirth { get; set; }
