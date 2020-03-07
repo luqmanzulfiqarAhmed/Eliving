@@ -45,7 +45,7 @@ namespace demoELiving.Controllers
         public async Task <bool > registerAdmin([FromBody]Admin admin)//ActionResult<Admin>
         {
             
-            var adminData = await context.retrieve(admin.adminId);
+            var adminData = await context.retrieve(admin.adminEmail);
             adminData= JsonConvert.SerializeObject(adminData);
             if (adminData.ToString() == "[]")
             {
@@ -63,7 +63,7 @@ namespace demoELiving.Controllers
         public async Task <ActionResult> updateAdminProfile( string id ,[FromBody]Admin admin)
          {
             
-            if (id != admin.adminId )
+            if (id != admin.adminEmail )
             {
                 return BadRequest();
             }

@@ -13,9 +13,10 @@ namespace demoELiving.Models
         // i.e adminId we store unique id by using find before registring any admin 
 
         
-       [BsonElement("adminId")]
-        public string adminId { get; set; }
-       
+       //will act as admin id
+      [BsonElement("adminEmail")]
+        public string adminEmail { get; set; }
+
        [BsonElement("adminFirstName")]
         public string adminFirstName { get; set; }
       
@@ -28,16 +29,13 @@ namespace demoELiving.Models
       [BsonElement("adminCnic")]
         public string adminCnic { get; set; }
 
-      [BsonElement("adminEmail")]
-        public string adminEmail { get; set; }
-      
       [BsonElement("adminPhoneNo")]
         public string adminPhoneNo { get; set; }
       
       [BsonElement("admindateofBirth")]
         public string admindateofBirth { get; set; }
       
-      [BsonElement("HousingSocietyID")]
+      [BsonElement("societyID")]
         public string HousingSocietyID { get; set; }
 
 

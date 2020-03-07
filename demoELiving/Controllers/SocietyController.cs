@@ -39,7 +39,7 @@ namespace demoELiving.Controllers
         [HttpPut( Name = "UpdateProfileSociety")]
         public async Task <ActionResult> updateAdminProfile(string adminId, string societyId, Society society)
         {
-            if (adminId != society.AdminID && societyId != society.SocietyID)
+            if (adminId != society.adminEmail && societyId != society.SocietyID)
             {
                 return BadRequest();
             }
