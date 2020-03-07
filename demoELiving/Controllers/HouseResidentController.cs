@@ -26,38 +26,48 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(residentData);            
         }
 
-        [Route("[action]/{societyId}")]
-        [HttpGet("{societyId}", Name = "AllHouseResidentData")]
-        public async Task<string> getAllHouseResidentData(string societyId)
-        {
-            var adminData = await context.retrieveAll(societyId);
-            return JsonConvert.SerializeObject(adminData);
-        }
+        // [Route("[action]/{societyId}")]
+        // [HttpGet("{societyId}", Name = "AllHouseResidentData")]
+        // public async Task<string> getAllHouseResidentData(string societyId)
+        // {
+        //     var adminData = await context.retrieveAll(societyId);
+        //     return JsonConvert.SerializeObject(adminData);
+        // }
 
-        [Route("[action]/{id}")]
-        [HttpGet("{id}", Name = "houseResidentProfile")]
-        public async Task<string> getHouseResidentProfile(string id)
+        [Route("[action]/{email}")]
+        [HttpGet("{email}/{societyId}", Name = "houseResidentProfile")]
+        public async Task<string> getHouseResidentProfile(string email,string societyId)
         {
 
-            var houseResidentData = await context.retrieve(id);
+            var houseResidentData = await context.retrieve(email);
             if (houseResidentData == null)
                 return null;
             return JsonConvert.SerializeObject(houseResidentData);
         }
-        [HttpPost("{houseResident}", Name = "registerHouseResident")]
-        public async Task <ActionResult<HouseResident>> registerHouseResident([FromBody]HouseResident houseResident)
-        {                            
-          await  context.insert(houseResident);
-            return CreatedAtAction("registerHouseResident", new HouseResident { houseResidentID = houseResident.houseResidentID }, houseResident);//just telling that this HouseResident is registered with this id
+
+        [HttpPost(Name = "registerHouseResident")]
+        public async Task <bool> registerHouseResident([FromBody]HouseResident houseResident)
+        {                                      
+        var residentData = await context.retrieve(houseResident.email);                                
+            residentData= JsonConvert.SerializeObject(residentData);
+            if (residentData.ToString() == "[]")
+            {
+                 await context.insert(houseResident);                 
+                 
+                 return true;
+            }
+            
+            return false;
+
         }
         [HttpPut( Name = "updateProfilehouseResident") ]
-        public async Task <ActionResult> updateAdminProfile(string houseResidentId, HouseResident houseResident)
+        public async Task <ActionResult> updateAdminProfile(string email, HouseResident houseResident)
         {
-            if (houseResidentId != houseResident.houseResidentID)
+            if (email != houseResident.email)
             {
                 return BadRequest();
             }
-            await context.update(houseResidentId, houseResident);
+            await context.update(email, houseResident);
             return NoContent();        
         }
     }

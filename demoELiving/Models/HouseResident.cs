@@ -6,9 +6,7 @@ namespace demoELiving.Models
     public class HouseResident {
         
         
-             
-        [BsonElement("houseResidentID")]
-        public string houseResidentID { get; set; }
+
        
         [BsonElement("housingSocietyID")]
         public string housingSocietyID { get; set; }
