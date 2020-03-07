@@ -20,7 +20,7 @@ namespace demoELiving.Models
         public string adminFirstName { get; set; }
       
       [BsonElement("adminLastName")]
-        public string adminFirstName { get; set; }
+        public string adminLastName { get; set; }
       
       [BsonElement("adminPassword")]
         public string adminPassword { get; set; }
