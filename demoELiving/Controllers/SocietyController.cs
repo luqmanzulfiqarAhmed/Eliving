@@ -43,7 +43,7 @@ namespace demoELiving.Controllers
             var societyData = await context.retrieve(id);
             if (societyData == null)
                 return null;
-            return Ok((Society)societyData);
+            return Ok(societyData);
         }
         [HttpPut( Name = "UpdateProfileSociety")]
         public async Task <bool> updateAdminProfile(string adminEmail, string societyId, Society society)
