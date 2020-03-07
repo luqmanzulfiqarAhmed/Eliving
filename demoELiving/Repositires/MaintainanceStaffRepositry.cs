@@ -37,27 +37,33 @@ namespace demoELiving.Repositires
 
         public async Task<object> insert(object obj)
         {           
+
              ManageMaintainanceStaff staff = (ManageMaintainanceStaff)obj;                                               
-                await collection.InsertOneAsync(staff);
+                await collection.InsertOneAsync(staff);             
                 return true;
 
         }
 
-        public async Task<object> retrieve(string adminEmail)
+        public async Task<object> retrieve(string staffEmail)
         {
-            var staff = Builders<ManageMaintainanceStaff>.Filter.Eq("adminEmail", adminEmail);            
+            
+            var staff = Builders<ManageMaintainanceStaff>.Filter.Eq("employeeEmail", staffEmail);            
+
             return  await collection.Find(staff).ToListAsync();
         }
 
         public async Task<object> retrieveAll(string societyId)
         {
-            var staff = Builders<ManageMaintainanceStaff>.Filter.Eq("HousingSocietyID", societyId);
+
+            var staff = Builders<ManageMaintainanceStaff>.Filter.Eq("HousingSocietyID", societyId);            
+
             return await collection.Find(staff).ToListAsync();
         }
 
-        public async Task<object> update(string id, object admin)
+        public async Task<object> update(string id, object staff)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == id, (ManageMaintainanceStaff)admin);
+
+            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == id, (ManageMaintainanceStaff)staff);            
             return true;
         }
     }
