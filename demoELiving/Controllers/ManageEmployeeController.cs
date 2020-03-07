@@ -35,13 +35,13 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(employeeData);
         }
 
-        [HttpPost("{societyID},{manageEmployee}", Name = "uploadEmployee")]
-        public async Task<ActionResult<ManageTransport>> uploadEmployee( ManageEmployee manageEmployee)
+        [HttpPost( Name = "uploadEmployee")]
+        public async Task<ActionResult<ManageTransport>> uploadEmployee([FromBody] ManageEmployee manageEmployee)
         {
             
 
                 await context.insert(manageEmployee);
-                return CreatedAtAction("uploadSchdule", new ManageEmployee { employeeEmail = manageEmployee.employeeEmail}, manageEmployee);
+                return CreatedAtAction("uploadEmployee", new ManageEmployee { employeeEmail = manageEmployee.employeeEmail}, manageEmployee);
         }
 
         [HttpPut( Name = "updateEmployee")]
