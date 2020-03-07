@@ -26,7 +26,7 @@ namespace demoELiving.Controllers
         {
             
             await context.insert(society);
-            return CreatedAtAction("SocietyRegister", new Society { SocietyID = society.SocietyID }, society);//just telling that society is registered with this id
+            return CreatedAtAction("SocietyRegister", new Society { societyID = society.societyID }, society);//just telling that society is registered with this id
         }
         [HttpGet("{id}", Name = "SocityData")]
         public async Task<string> getSocityData(string id)
@@ -39,7 +39,7 @@ namespace demoELiving.Controllers
         [HttpPut( Name = "UpdateProfileSociety")]
         public async Task <bool> updateAdminProfile(string adminEmail, string societyId, Society society)
         {
-            if (adminEmail != society.adminEmail && societyId != society.SocietyID)
+            if (adminEmail != society.adminEmail && societyId != society.societyID)
             {
                 return true;
             }

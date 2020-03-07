@@ -7,19 +7,19 @@ namespace demoELiving.Models
     public class Society {
 
         [BsonElement("societyId")]
-        public string SocietyID { get; set; }
+        public string societyID { get; set; }
 
         
         [BsonElement("adminEmail")]
         public string adminEmail { get; set; }
         
-        [BsonElement("societyname")]
-        public string Societyname { get; set; }
+        [BsonElement("societyName")]
+        public string societyName { get; set; }
         [BsonElement("societyFacilities")]
-        public string registeredFacilities { get; set; }
+        public string societyFacilities { get; set; }
 
-        [BsonElement("societylocations")]
-        public string locations { get; set; }
+        [BsonElement("societyLocation")]
+        public string societyLocation { get; set; }
 
 
 
