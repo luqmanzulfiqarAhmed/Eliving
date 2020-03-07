@@ -36,15 +36,12 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost("{societyID},{manageEmployee}", Name = "uploadEmployee")]
-        public async Task<ActionResult<ManageTransport>> uploadEmployee(string societyID, ManageEmployee manageEmployee)
+        public async Task<ActionResult<ManageTransport>> uploadEmployee( ManageEmployee manageEmployee)
         {
-            if (societyID == manageEmployee.societyId)
-            {
+            
 
                 await context.insert(manageEmployee);
-                return CreatedAtAction("uploadSchdule", new ManageEmployee { employeeEmail = manageEmployee.employeeEmail}, manageEmployee);//just telling that this HouseResident is registered with this id
-            }
-            return BadRequest();
+                return CreatedAtAction("uploadSchdule", new ManageEmployee { employeeEmail = manageEmployee.employeeEmail}, manageEmployee);
         }
 
         [HttpPut( Name = "updateEmployee")]
