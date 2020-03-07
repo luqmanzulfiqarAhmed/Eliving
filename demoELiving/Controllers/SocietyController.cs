@@ -37,15 +37,15 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(societyData);
         }
         [HttpPut( Name = "UpdateProfileSociety")]
-        public async Task <ActionResult> updateAdminProfile(string adminId, string societyId, Society society)
+        public async Task <bool> updateAdminProfile(string adminEmail, string societyId, Society society)
         {
-            if (adminId != society.adminEmail && societyId != society.SocietyID)
+            if (adminEmail != society.adminEmail && societyId != society.SocietyID)
             {
-                return BadRequest();
+                return true;
             }
 
             await context.update(societyId, society);
-            return NoContent();
+            return false;
         }
 
 
