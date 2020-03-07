@@ -7,7 +7,7 @@ namespace demoELiving.Models
     public class Society {
 
         [BsonElement("societyId")]
-        public string societyID { get; set; }
+        public string societyId { get; set; }
 
         
         [BsonElement("adminEmail")]
