@@ -49,7 +49,7 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieve(string id)
         {
-            var society = Builders<Society>.Filter.Eq("Id", id);
+            var society = Builders<Society>.Filter.Eq("societyId", id);
 
             return await collection.Find(society).ToListAsync();
         }
