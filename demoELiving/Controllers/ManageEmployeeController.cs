@@ -42,7 +42,7 @@ namespace demoELiving.Controllers
             {
 
                 await context.insert(manageEmployee);
-                return CreatedAtAction("uploadSchdule", new ManageEmployee { employeeId = manageEmployee.employeeId}, manageEmployee);//just telling that this HouseResident is registered with this id
+                return CreatedAtAction("uploadSchdule", new ManageEmployee { employeeEmail = manageEmployee.employeeEmail}, manageEmployee);//just telling that this HouseResident is registered with this id
             }
             return BadRequest();
         }
@@ -50,7 +50,7 @@ namespace demoELiving.Controllers
         [HttpPut( Name = "updateEmployee")]
         public async Task<ActionResult> updateEmployee(string adminId, string societyId, ManageEmployee manageEmployee)
         {
-            if (adminId != manageEmployee.adminID && societyId != manageEmployee.societyId)
+            if (adminId != manageEmployee.employeeEmail && societyId != manageEmployee.societyId)
             {
                 return BadRequest();
             }

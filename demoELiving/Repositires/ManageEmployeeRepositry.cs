@@ -51,7 +51,7 @@ namespace demoELiving.Repositires
 
         public async Task<object> update(string srid, object admin)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.manageEmployeeID == srid, (ManageEmployee)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == srid, (ManageEmployee)admin);
             return true;
         }
 

@@ -4,33 +4,45 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace demoELiving.Models
 {
   [BsonIgnoreExtraElements]
-    public class ManageEmployee:Facilities {
+    public class ManageEmployee {
 
       public  ManageEmployee() { }
+
       
-        [BsonElement("facilitiesId")]
-        public string facilitiesId { get ; set ; }
       
-      [BsonElement("manageEmployeeID")]
-        public string manageEmployeeID { get ; set ; }
-        [BsonElement("societyId")]
-        public string societyId { get; set; }
-        [BsonElement("adminID")]
-        public string adminID { get; set; }
-        [BsonElement("employeeId")]
-        public string employeeId { get; set; }
-        [BsonElement("employeeName")]
-        public string employeeName{ get; set; }
-        [BsonElement("employeeDepartment")]
-        public string employeeDepartment{ get; set; }
-        [BsonElement("employeePhoneNumber")]
-        public string employeePhoneNumber{ get; set; }
-        [BsonElement("employeeCNIC")]
-        public string employeeCNIC{ get; set; }
-        [BsonElement("employeeAddress")]
-        public string employeeAddress{ get; set; }
-        [BsonElement("residentId")]
-        public string residentId { get ; set; }
+        
+      
+      [BsonElement("employeeEmail")]
+      public string employeeEmail { get ; set ; }
+      
+      [BsonElement("employeeFirstName")]
+      public string employeeFirstName { get; set; }
+      
+      [BsonElement("employeeLastName")]
+      public string employeeLastName { get; set; } 
+      
+      [BsonElement("employeeCNIC")]
+      public string employeeCNIC { get; set; } 
+
+      [BsonElement("employeePhoneNo")]
+      public string employeePhoneNo { get; set; } 
+
+      [BsonElement("department")]
+      public string department { get; set; }       
+      
+      [BsonElement("homeAddress")]
+      public string homeAddress { get; set; } 
+
+      [BsonElement("employeeDescription")]
+      public string employeeDescription { get; set; } 
+      
+      [BsonElement("employeeDateofBirth")]
+      public string employeeDateofBirth { get; set; }
+      [BsonElement("societyId")]
+      public string societyId { get; set; }
+      
+       
+        
     }
 
 }

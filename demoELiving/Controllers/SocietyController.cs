@@ -46,7 +46,7 @@ namespace demoELiving.Controllers
             return Ok(societyData);
         }
         [HttpPut( Name = "UpdateProfileSociety")]
-        public async Task <bool> updateAdminProfile(string adminEmail, string societyId, Society society)
+        public async Task <bool> updateSocietyProfile(string adminEmail, string societyId, Society society)
         {
             if (adminEmail != society.adminEmail && societyId != society.societyId)
             {
