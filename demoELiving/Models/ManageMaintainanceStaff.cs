@@ -17,6 +17,9 @@ public class ManageMaintainanceStaff{
 // $mStaffDescription = $request->input('mStaffDescription');
 // $DateofBirth = $request->input('DateofBirth');
 
+        [BsonElement("societyId")]
+        public string societyId { get; set; }
+        
             [BsonElement("StaffFirstName")]
         public string StaffFirstName { get; set; }
               

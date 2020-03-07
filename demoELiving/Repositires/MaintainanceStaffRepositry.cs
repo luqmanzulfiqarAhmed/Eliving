@@ -14,7 +14,7 @@ namespace demoELiving.Repositires
     {
 
         private MongoDbContext dbContext = null;
-        public AdminRepositry(IConfiguration config)
+        public MaintainanceStaffRepositry(IConfiguration config)
         {
 
             dbContext = MongoDbContext.getMongoDbContext(config);//geting singletone object of database
@@ -37,27 +37,27 @@ namespace demoELiving.Repositires
 
         public async Task<object> insert(object obj)
         {           
-             Admin admin = (Admin)obj;                                               
-                await collection.InsertOneAsync((Admin)admin);
+             MaintainanceStaff staff = (MaintainanceStaff)obj;                                               
+                await collection.InsertOneAsync((MaintainanceStaff)staff);
                 return true;
 
         }
 
-        public async Task<object> retrieve(string adminEmail)
+        public async Task<object> retrieve(string staffEmail)
         {
-            var admin = Builders<Admin>.Filter.Eq("adminEmail", adminEmail);            
-            return  await collection.Find(admin).ToListAsync();
+            var staff = Builders<MaintainanceStaff>.Filter.Eq("employeeEmail", staffEmail);            
+            return  await collection.Find(staff).ToListAsync();
         }
 
         public async Task<object> retrieveAll(string societyId)
         {
-            var admin = Builders<Admin>.Filter.Eq("HousingSocietyID", societyId);
-            return await collection.Find(admin).ToListAsync();
+            var staff = Builders<MaintainanceStaff>.Filter.Eq("societyId", societyId);
+            return await collection.Find(staff).ToListAsync();
         }
 
-        public async Task<object> update(string id, object admin)
+        public async Task<object> update(string id, object staff)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.adminEmail == id, (Admin)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == id, (MaintainanceStaff)admin);
             return true;
         }
     }

@@ -49,7 +49,7 @@ namespace demoELiving.Controllers
 
 
         [HttpPost("{houseResident}", Name = "registerHouseResident")]
-        public async Task <ActionResult<HouseResident>> registerHouseResident(HouseResident houseResident)
+        public async Task <ActionResult<HouseResident>> registerHouseResident([FromBody] HouseResident houseResident)
         {
 
             
