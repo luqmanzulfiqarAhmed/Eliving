@@ -56,7 +56,7 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieveAll(string Id)
         {
-            var society = Builders<Society>.Filter.Eq("HousingSocietyID", Id);
+            var society = Builders<Society>.Filter.Eq("societyId", Id);
             return await collection.Find(society).ToListAsync();
         }
 

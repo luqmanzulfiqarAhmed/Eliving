@@ -22,11 +22,21 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost(Name = "SocietyRegister")]
-        public async Task<ActionResult<Society>> registerSociety([FromBody]Society society)
+        public async Task <bool > registerSociety([FromBody]Society society)
         {
             
-            await context.insert(society);
-            return CreatedAtAction("SocietyRegister", new Society { societyId = society.societyId }, society);//just telling that society is registered with this id
+            
+            
+            var societyData = await context.retrieve(society.societyId);
+            societyData= JsonConvert.SerializeObject(societyData);
+            if (societyData.ToString() == "[]")
+            {
+                 await context.insert(society);
+                 //adminData = (Admin)adminData;
+                 return true;
+            }
+            
+            return false;
         }
         [HttpGet("{id}", Name = "SocityData")]
         public async Task<string> getSocityData(string id)
