@@ -26,13 +26,13 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(residentData);            
         }
 
-        // [Route("[action]/{societyId}")]
-        // [HttpGet("{societyId}", Name = "AllHouseResidentData")]
-        // public async Task<string> getAllHouseResidentData(string societyId)
-        // {
-        //     var adminData = await context.retrieveAll(societyId);
-        //     return JsonConvert.SerializeObject(adminData);
-        // }
+        [Route("[action]/{societyId}")]
+        [HttpGet("{societyId}", Name = "AllHouseResidentData")]
+        public async Task<string> getAllHouseResidentData(string societyId)
+        {
+            var adminData = await context.retrieveAll(societyId);
+            return JsonConvert.SerializeObject(adminData);
+        }
 
         [Route("[action]/{email}")]
         [HttpGet("{email}/{societyId}", Name = "houseResidentProfile")]
