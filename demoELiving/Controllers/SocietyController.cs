@@ -22,7 +22,7 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost(Name = "SocietyRegister")]
-        public async Task<ActionResult<Society>> registerSociety(Society society)
+        public async Task<ActionResult<Society>> registerSociety([FromBody]Society society)
         {
             
             await context.insert(society);
