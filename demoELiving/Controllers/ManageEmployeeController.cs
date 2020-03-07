@@ -36,12 +36,20 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost( Name = "uploadEmployee")]
-        public async Task<ActionResult<ManageTransport>> uploadEmployee([FromBody] ManageEmployee manageEmployee)
+        public  async Task <bool > registerEmployee([FromBody] ManageEmployee manageEmployee)
         {
             
+            var manageEmployeeData = await context.retrieve(manageEmployee.employeeEmail);
+            manageEmployeeData= JsonConvert.SerializeObject(manageEmployeeData);
+            if (manageEmployeeData.ToString() == "[]")
+            {
+                 await context.insert(manageEmployee);                 
+                 return true;
+            }
+            
+            return false;
 
-                await context.insert(manageEmployee);
-                return CreatedAtAction("uploadEmployee", new ManageEmployee { employeeEmail = manageEmployee.employeeEmail}, manageEmployee);
+                
         }
 
         [HttpPut( Name = "updateEmployee")]
