@@ -62,7 +62,7 @@ namespace demoELiving.Repositires
 
         public async Task<object> update(string id, object society)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.AdminID == id, (Society)society);
+            await collection.ReplaceOneAsync(ZZ => ZZ.adminEmail == id, (Society)society);
             return true;
         }
     }

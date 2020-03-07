@@ -43,9 +43,9 @@ namespace demoELiving.Repositires
 
         }
 
-        public async Task<object> retrieve(string id)
+        public async Task<object> retrieve(string adminEmail)
         {
-            var admin = Builders<Admin>.Filter.Eq("adminId", id);            
+            var admin = Builders<Admin>.Filter.Eq("adminEmail", adminEmail);            
             return  await collection.Find(admin).ToListAsync();
         }
 
@@ -57,7 +57,7 @@ namespace demoELiving.Repositires
 
         public async Task<object> update(string id, object admin)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.adminId == id, (Admin)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.adminEmail == id, (Admin)admin);
             return true;
         }
     }
