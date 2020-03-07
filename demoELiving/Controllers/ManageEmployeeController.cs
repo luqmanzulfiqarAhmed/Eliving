@@ -27,10 +27,9 @@ namespace demoELiving.Controllers
 
          
 
-        [HttpPost( Name = "uploadEmployee")]
-        public  async Task <bool > registerEmployee([FromBody] ManageEmployee manageEmployee)
-        {
-            
+        [HttpPost( Name = "registerEmployee")]
+        public  async Task <bool> registerEmployee([FromBody] ManageEmployee manageEmployee)
+        {            
             var manageEmployeeData = await context.retrieve(manageEmployee.employeeEmail);
             manageEmployeeData= JsonConvert.SerializeObject(manageEmployeeData);
             if (manageEmployeeData.ToString() == "[]")
