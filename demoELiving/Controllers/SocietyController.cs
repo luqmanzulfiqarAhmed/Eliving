@@ -38,12 +38,12 @@ namespace demoELiving.Controllers
             return false;
         }
         [HttpGet("{id}", Name = "SocityData")]
-        public async Task<string> getSocityData(string id)
+        public async Task<IActionResult> getSocityData(string id)
         {
             var societyData = await context.retrieve(id);
             if (societyData == null)
                 return null;
-            return JsonConvert.SerializeObject(societyData);
+            return Ok((Society)societyData);
         }
         [HttpPut( Name = "UpdateProfileSociety")]
         public async Task <bool> updateAdminProfile(string adminEmail, string societyId, Society society)
