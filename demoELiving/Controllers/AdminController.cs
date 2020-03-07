@@ -43,8 +43,7 @@ namespace demoELiving.Controllers
 
         [HttpPost(Name = "AdminRegister")]
         public async Task <bool > registerAdmin([FromBody]Admin admin)//ActionResult<Admin>
-        {
-            
+        {            
             var adminData = await context.retrieve(admin.adminId);
             adminData= JsonConvert.SerializeObject(adminData);
             if (adminData.ToString() == "[]")
