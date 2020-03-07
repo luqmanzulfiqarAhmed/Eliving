@@ -37,16 +37,17 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieve(string id)
         {
-            var admin = Builders<ManageEmployee>.Filter.Eq("srId", id);
+            var admin = Builders<ManageEmployee>.Filter.Eq("employeeEmail", id);
 
             return await collection.Find(admin).ToListAsync();
         }
 
         //as we are retriving all societies 
-        public async Task<object> retrieveAll(string str)
+        public async Task<object> retrieveAll(string societyId)
         {
 
-            return await collection.Find(x => true).ToListAsync();
+            var admin = Builders<ManageEmployee>.Filter.Eq("societyId", societyId);
+            return await collection.Find(admin).ToListAsync();
         }
 
         public async Task<object> update(string srid, object admin)

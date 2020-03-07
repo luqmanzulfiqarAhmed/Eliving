@@ -25,15 +25,7 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(employeeData);
         }
 
-        [HttpGet("{id}", Name = "EmployeeData")]
-        public async Task<string> getEmployeeData(string id)
-        {
-
-            var employeeData = await context.retrieve(id);
-            if (employeeData == null)
-                return null;
-            return JsonConvert.SerializeObject(employeeData);
-        }
+         
 
         [HttpPost( Name = "uploadEmployee")]
         public  async Task <bool > registerEmployee([FromBody] ManageEmployee manageEmployee)
