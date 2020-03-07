@@ -24,8 +24,7 @@ namespace demoELiving.Controllers
         [HttpPost(Name = "SocietyRegister")]
         public async Task <bool > registerSociety([FromBody]Society society)
         {
-            
-            
+                     
             
             var societyData = await context.retrieve(society.societyId);
             societyData= JsonConvert.SerializeObject(societyData);
