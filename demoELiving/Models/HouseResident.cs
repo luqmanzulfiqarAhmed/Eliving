@@ -14,8 +14,8 @@ namespace demoELiving.Models
         public string residentName { get; set; }
        [BsonElement("residentAge")]
         public string residentAge { get; set; }
-        [BsonElement("houseId")]
-        public string houseId { get; set; }
+        [BsonElement("propertyId")]
+        public string propertyId { get; set; }
         [BsonElement("address")]
         public string address { get; set; }
         [BsonElement("password")]

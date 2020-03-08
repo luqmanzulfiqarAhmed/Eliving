@@ -30,6 +30,7 @@ namespace demoELiving
               
             services.AddScoped<SocietyRepositry>();
 
+            services.AddScoped<PropertyRepositry>();
               
             services.AddScoped<CommercialResidentRepositry>();
               
