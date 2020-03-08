@@ -18,18 +18,18 @@ namespace demoELiving.Controllers
             context = billRepositry;            
         }
 
-        [HttpGet("{societyId}", Name = "AllComplainsData")]
-        public async Task<string> getAllComplainsData(string societyId)
+        [HttpGet("{societyId}/{st}", Name = "AllComplainsData")]
+        public async Task<string> getAllComplainsData(string societyId,string st)
         {
             var complainsData = await context.retrieveAll(societyId);
             return JsonConvert.SerializeObject(complainsData);
         }
 
-        [HttpGet("{id}", Name = "complain")]
-        public async Task<string> getcomplain(string id)
+        [HttpGet("{email}", Name = "complain")]
+        public async Task<string> getcomplain(string email)
         {
 
-            var complainData = await context.retrieve(id);
+            var complainData = await context.retrieve(email);
             if (complainData == null)
                 return null;
             return JsonConvert.SerializeObject(complainData);

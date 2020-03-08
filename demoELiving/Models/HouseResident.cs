@@ -10,6 +10,10 @@ namespace demoELiving.Models
        
         [BsonElement("housingSocietyID")]
         public string housingSocietyID { get; set; }
+
+        [BsonElement("residentType")]
+        public string residentType { get; set; }
+        
         [BsonElement("residentFirstName")]
         public string residentFirstName { get; set; }
 
