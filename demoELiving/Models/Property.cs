@@ -10,8 +10,19 @@ namespace demoELiving.Models
         public Property() { }
         [BsonElement("propertyId")]
         public string propertyId { get ; set ; }
+        
+        [BsonElement("propertyName")]
+        public string propertyName { get ; set ; }
+        
+        [BsonElement("propertyDescription")]//no. of graves
+        public string propertyDescription { get ; set ; }
+
         [BsonElement("societyId")]
         public string societyId { get ; set ; }
+
+        [BsonElement("ownerId")]
+        public string ownerId { get ; set ; }
+
         [BsonElement("area")]
         public string area { get ; set ; }
 

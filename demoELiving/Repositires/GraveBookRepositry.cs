@@ -2,12 +2,13 @@
 using demoELiving.MongoDB;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+
 using System.Threading.Tasks;
 
 namespace demoELiving.Repositires
 {
 
-    public class GraveBookRepositry : InterfaceDataBase
+    public class GraveBookRepositry 
     {
             private MongoDbContext dbContext = null;
         
@@ -32,23 +33,29 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> retrieve(string id)
+        public async Task<object> retrieve(string societyId,string graveYardName,string residentId)
         {
-            var admin = Builders<GraveBook>.Filter.Eq("srId", id);
+        var society = Builders<GraveBook>.Filter.Eq(x => x.societyId, societyId);
+        var name = Builders<GraveBook>.Filter.Eq(x => x.propertyName,graveYardName);
+        var id = Builders<GraveBook>.Filter.Eq(x => x.residentId , residentId);
+        var combineFilters = Builders<GraveBook>.Filter.And(society,name,id );
 
-            return await collection.Find(admin).ToListAsync();
+        return await collection.Find(combineFilters).ToListAsync();                               
         }
 
         //as we are retriving all societies 
-        public async Task<object> retrieveAll(string str)
+        public async Task<object> retrieveAll(string societyId,string graveYardName)
         {
+            var society = Builders<GraveBook>.Filter.Eq(x => x.societyId, societyId);
+            var name = Builders<GraveBook>.Filter.Eq(x => x.propertyName,graveYardName);
+            var combineFilters = Builders<GraveBook>.Filter.And(society,name );
 
-            return await collection.Find(x => true).ToListAsync();
+            return await collection.Find(combineFilters).ToListAsync(); 
         }
 
-        public async Task<object> update(string srid, object admin)
+        public async Task<object> update(string graveBookId, object admin)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.graveBookId == srid, (GraveBook)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.graveBookId == graveBookId, (GraveBook)admin);
             return true;
         }
 
