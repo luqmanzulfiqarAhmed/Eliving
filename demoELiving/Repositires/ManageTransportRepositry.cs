@@ -22,11 +22,7 @@ namespace demoELiving.Repositires
             collection = dbContext.getDataBase().GetCollection<ManageTransport>("ManageTransports");
         }
         private readonly IMongoCollection<ManageTransport> collection;
-        public async Task<object> delete(string id)
-        {
-
-            return true;
-        }
+        
 
         public async Task<object> insert(object admin)
         {
@@ -35,23 +31,23 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> retrieve(string id)
+        public async Task<object> retrieve(string routeId)
         {
-            var admin = Builders<ManageTransport>.Filter.Eq("srId", id);
+            var transport = Builders<ManageTransport>.Filter.Eq("routeId", routeId);
 
-            return await collection.Find(admin).ToListAsync();
+            return await collection.Find(transport).ToListAsync();
         }
 
         //as we are retriving all societies 
-        public async Task<object> retrieveAll(string str)
+        public async Task<object> retrieveAll(string societyId)
         {
 
-            return await collection.Find(x => true).ToListAsync();
+            return await collection.Find(x => x.societyId == societyId ).ToListAsync();
         }
 
-        public async Task<object> update(string id, object admin)
+        public async Task<object> update(string routeId, object transport)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.manageTransportID == id, (ManageTransport)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.routeId == routeId, (ManageTransport)transport);
             return true;
         }
 

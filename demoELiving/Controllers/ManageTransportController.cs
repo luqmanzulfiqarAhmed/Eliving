@@ -25,37 +25,30 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(complainsData);
         }
 
-        [HttpGet("{id}", Name = "TransportData")]
-        public async Task<string> getTransportData(string id)
+        [HttpGet("{routeId}", Name = "TransportData")]
+        public async Task<string> getTransportData(string routeId)
         {
 
-            var transportData = await context.retrieve(id);
+            var transportData = await context.retrieve(routeId);
             if (transportData == null)
                 return null;
             return JsonConvert.SerializeObject(transportData);
         }
 
-        [HttpPost("{residentId},{manageTransport}", Name = "uploadSchdule")]
-        public async Task<ActionResult<ManageTransport>> uploadSchdule(string residentId, ManageTransport manageTransport)
+        [HttpPost(Name = "uploadSchdule")]
+        public async Task<ActionResult<ManageTransport>> uploadSchdule( [FromBody]ManageTransport manageTransport)
         {
-            if (residentId == manageTransport.manageTransportID)
-            {
-
+            
                 await context.insert(manageTransport);
-                return CreatedAtAction("uploadSchdule", new ManageTransport { manageTransportID = manageTransport.manageTransportID}, manageTransport);//just telling that this HouseResident is registered with this id
-            }
-            return BadRequest();
+                return CreatedAtAction("uploadSchdule", new ManageTransport { routeId = manageTransport.routeId}, manageTransport);            
         }
 
         [HttpPut(Name = "updateSchdule")]
-        public async Task<ActionResult> updateSchdule(string adminId, string societyId, ManageTransport manageTransport)
+        public async Task<ActionResult> updateSchdule([FromBody]ManageTransport manageTransport)
         {
-            if (adminId != manageTransport.adminID && societyId != manageTransport.societyId)
-            {
-                return BadRequest();
-            }
             
-            await context.update(adminId, manageTransport);
+            
+            await context.update(manageTransport.routeId,manageTransport);
             return NoContent();
         }
 
