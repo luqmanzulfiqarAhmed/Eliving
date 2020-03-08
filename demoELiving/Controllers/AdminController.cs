@@ -57,49 +57,15 @@ namespace demoELiving.Controllers
         }
          
 
-        //[HttpPut("{adminId},{societyId},{admin}", Name = "UpdateProfileAdmin")]
-        [HttpPut("{id}")]
-        public async Task <ActionResult> updateAdminProfile( string id ,[FromBody]Admin admin)
+        
+        [HttpPut]
+        public async Task <ActionResult> updateAdminProfile( [FromBody]Admin admin)
          {
             
-            if (id != admin.adminEmail )
-            {
-                return BadRequest();
-            }
-
-           await context.update(id, admin);
+        
+           await context.update(admin.adminEmail, admin);
             return Ok(admin);
         }
     }
 }
-
-        //[HttpGet]
-        ////http://localhost:5000/api/Admin
-        //public ActionResult<List<Admin>> Get()
-        //{
-        //        return   _bookService.Get();
-        //}
-
-        //[HttpGet("{id:length(24)}", Name = "GetAdmin")]
-        //public ActionResult<Admin> Get(string id)
-        //{
-        //    var book = _bookService.GetAdmin(id);
-
-        //    if (book == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return book;
-        //}
-
-        //[HttpPost]
-        //public ActionResult<Admin> Create([FromBody]Admin book)
-        //{
-        //    _bookService.Create(book);
-
-
-        //    return CreatedAtRoute( new { id = book.Id }, book);
-        //}
-
     
