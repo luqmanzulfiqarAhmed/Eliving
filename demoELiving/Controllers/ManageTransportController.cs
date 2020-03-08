@@ -25,8 +25,8 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(complainsData);
         }
 
-        [HttpGet("{routeId}", Name = "TransportData")]
-        public async Task<string> getTransportData(string routeId)
+        [HttpGet("{routeId}/{societyId}", Name = "TransportData")]
+        public async Task<string> getTransportData(string routeId,string societyId)
         {
 
             var transportData = await context.retrieve(routeId);
