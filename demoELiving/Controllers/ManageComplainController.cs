@@ -35,16 +35,14 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(complainData);
         }
 
-        [HttpPost("{residentId,complain}", Name = "submitComplain")]
-        public async Task<ActionResult<ManageComplain>> submitComplain(string residentId, ManageComplain complain)
+        [HttpPost(Name = "submitComplain")]
+        public async Task<bool> submitComplain([FromBody] ManageComplain complain)
         {
-            if (residentId == complain.complainId)
-            {
+            
                 
-                await context.insert(complain);
-                return CreatedAtAction("submitBill", new ManageComplain { complainId = complain.complainId}, complain);//just telling that this HouseResident is registered with this id
-            }
-            return BadRequest();
+               bool flag = await context.insert(complain);
+                return flag;
+            
         }
 
         [HttpPut(Name = "updateBill")]

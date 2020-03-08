@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace demoELiving.Repositires
 {
 
-    public class ManageComplainRepositry : InterfaceDataBase
+    public class ManageComplainRepositry 
     {
             private MongoDbContext dbContext = null;
             
@@ -28,11 +28,15 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> insert(object admin)
+        public async Task<bool> insert(object admin)
         {
-            await collection.InsertOneAsync((ManageComplain)admin);
-
+            try{
+             await collection.InsertOneAsync((ManageComplain)admin);
             return true;
+            }
+            catch(Exception e){
+                    return false;
+            }
         }
 
         public async Task<object> retrieve(string id)
