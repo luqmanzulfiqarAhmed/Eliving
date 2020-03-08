@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace demoELiving.Repositires
 {
 
-    public class ManageEmployeeRepositry : InterfaceDataBase
+    public class ManageEmployeeRepositry 
     {
             private MongoDbContext dbContext = null;
         private IMongoDatabase database;
@@ -35,13 +35,19 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> retrieve(string id)
+        public async Task<object> retrieve(string societyId,string desig)
         {
-            var admin = Builders<ManageEmployee>.Filter.Eq("employeeEmail", id);
-
-            return await collection.Find(admin).ToListAsync();
+            var employeeEmail = Builders<ManageEmployee>.Filter.Eq("societyId", societyId);
+            var employeeDesig = Builders<ManageEmployee>.Filter.Eq("designation", desig);
+            var  combineFilters = Builders<ManageEmployee>.Filter.And(employeeEmail, employeeDesig);
+            return await collection.Find(combineFilters).ToListAsync();   
         }
-
+public async Task<object> retrieveByEmail(string email)
+        {
+            
+            var employeeDesig = Builders<ManageEmployee>.Filter.Eq("employeeEmail", email);            
+            return await collection.Find(employeeDesig).ToListAsync();   
+        }
         //as we are retriving all societies 
         public async Task<object> retrieveAll(string societyId)
         {
@@ -50,9 +56,9 @@ namespace demoELiving.Repositires
             return await collection.Find(admin).ToListAsync();
         }
 
-        public async Task<object> update(string srid, object admin)
+        public async Task<object> update(string email, object employee)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == srid, (ManageEmployee)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == email, (ManageEmployee)employee);
             return true;
         }
 

@@ -38,7 +38,9 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieve(string email)
         {
+            string societyId="";
             var houseResident = Builders<HouseResident>.Filter.Eq("email", email);
+            var society = Builders<HouseResident>.Filter.Eq("societyId", societyId);
 
             return await collection.Find(houseResident).ToListAsync();
         }

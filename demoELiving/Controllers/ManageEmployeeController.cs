@@ -25,12 +25,17 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(employeeData);
         }
 
-         
+         [HttpGet("{societyId}/{designation}", Name = "EmployeeData")]
+        public async Task<string> getEmployeeData(string societyId,string designation)
+        {
+            var employeeData = await context.retrieve(societyId,designation);
+            return JsonConvert.SerializeObject(employeeData);
+        }
 
         [HttpPost( Name = "registerEmployee")]
         public  async Task <bool> registerEmployee([FromBody] ManageEmployee manageEmployee)
         {            
-            var manageEmployeeData = await context.retrieve(manageEmployee.employeeEmail);
+            var manageEmployeeData = await context.retrieveByEmail(manageEmployee.employeeEmail);
             manageEmployeeData= JsonConvert.SerializeObject(manageEmployeeData);
             if (manageEmployeeData.ToString() == "[]")
             {
@@ -44,14 +49,10 @@ namespace demoELiving.Controllers
         }
 
         [HttpPut( Name = "updateEmployee")]
-        public async Task<ActionResult> updateEmployee(string adminId, string societyId, ManageEmployee manageEmployee)
-        {
-            if (adminId != manageEmployee.employeeEmail && societyId != manageEmployee.societyId)
-            {
-                return BadRequest();
-            }
+        public async Task<ActionResult> updateEmployee( [FromBody]ManageEmployee manageEmployee)
+        {            
 
-            await context.update(adminId, manageEmployee);
+            await context.update(manageEmployee.employeeEmail, manageEmployee);
             return NoContent();
         }
 
