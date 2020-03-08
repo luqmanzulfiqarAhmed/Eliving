@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace demoELiving.Repositires
 {
 
-    public class ManageTransportRepositry : InterfaceDataBase
+    public class ManageTransportRepositry 
     {
             private MongoDbContext dbContext = null;
         private IMongoDatabase database;
