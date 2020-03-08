@@ -26,6 +26,8 @@ namespace demoELiving.Models
         public string departureTime { get; set; }        
         [BsonElement("arrivalTime")]
         public string arrivalTime{ get; set; }
+        [BsonElement("busStop")]
+        public string busStop{ get; set; }
                 
     }
 
