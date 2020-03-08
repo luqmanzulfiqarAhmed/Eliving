@@ -58,7 +58,8 @@ namespace demoELiving.Controllers
          
 
         
-        [HttpPut]
+        [HttpPut
+        ]
         public async Task <ActionResult> updateAdminProfile( [FromBody]Admin admin)
          {
             
