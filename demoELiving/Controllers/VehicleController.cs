@@ -29,14 +29,14 @@ namespace demoELiving.Controllers
             
         }
          
-        // [HttpGet("{id}/{societyId}", Name = "VehicleProfile")]
-        // public async Task<string> getVehicleData(string vid,string societyId)
-        // {
-        //     var VehicleData = await context.retrieve(vid);
-        //     if (VehicleData == null)
-        //         return null;
-        //     return JsonConvert.SerializeObject(VehicleData);        
-        // }
+        [HttpGet("{vid}/{societyId}", Name = "VehicleProfile")]
+        public async Task<string> getVehicleData(string vid,string societyId)
+        {
+            var VehicleData = await context.retrieve(vid);
+            if (VehicleData == null)
+                return null;
+            return JsonConvert.SerializeObject(VehicleData);        
+        }
 
         [HttpPost(Name = "VehicleRegister")]
         public async Task <bool > registerVehicle([FromBody]Vehicle vehicle)//ActionResult<Vehicle>
@@ -58,7 +58,7 @@ namespace demoELiving.Controllers
          
 
         //[HttpPut("{VehicleId},{societyId},{Vehicle}", Name = "UpdateProfileVehicle")]
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task <ActionResult> updateVehicleProfile( [FromBody]Vehicle vehicle)
          {
             

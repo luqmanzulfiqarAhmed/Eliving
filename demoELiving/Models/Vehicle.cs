@@ -4,9 +4,9 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace demoELiving.Models
 {
 
+[BsonIgnoreExtraElements]
     public class Vehicle
     {
-
         [BsonElement("societyId")]
         public string societyId { get; set; }
         [BsonElement("vehicalNo")]
@@ -21,7 +21,7 @@ namespace demoELiving.Models
         [BsonElement("vehicalDescription")]
         public string vehicalDescription { get; set; }
 
-
+        public Vehicle(){}
 
 
     }

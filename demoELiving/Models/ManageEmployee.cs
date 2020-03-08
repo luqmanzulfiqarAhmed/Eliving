@@ -27,8 +27,8 @@ namespace demoELiving.Models
       [BsonElement("employeePhoneNo")]
       public string employeePhoneNo { get; set; } 
 
-      [BsonElement("department")]
-      public string department { get; set; }       
+      [BsonElement("designation")]
+      public string designation { get; set; }       
       
       [BsonElement("homeAddress")]
       public string homeAddress { get; set; } 
