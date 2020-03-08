@@ -51,7 +51,8 @@ namespace demoELiving
               
             services.AddScoped<ManageComplainRepositry>();
 
-              
+            services.AddScoped<ManageBillRepositry>();
+            
             services.AddScoped<ManageEmployeeRepositry>();
 
               
