@@ -41,12 +41,10 @@ namespace demoELiving.Controllers
 
         [HttpPost( Name = "submitBill")]
         public async Task<ActionResult<ManageBill>> submitBill([FromBody] ManageBill bill)
-        {
-            
+        {            
                 //here first i will call 'calculateBill' function using bill object
                 await context.insert(bill);
-                return CreatedAtAction("submitBill", new ManageBill { billId = bill.billId }, bill);//just telling that this HouseResident is registered with this id
-            
+                return CreatedAtAction("submitBill", new ManageBill { billId = bill.billId }, bill);//just telling that this HouseResident is registered with this id            
             
         }
  
