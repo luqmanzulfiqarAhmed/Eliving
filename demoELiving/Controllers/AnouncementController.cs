@@ -20,19 +20,19 @@ namespace demoELiving.Controllers
         {
             context = anouncementRepositry;
         }
-        [HttpGet]
-        public async Task<string> getAllAnouncementsData()
+        [HttpGet("{sid}", Name = "AllAnouncementProfile")]
+        public async Task<string> getAllAnouncementsData(string sId)
         {
 
-            var anouncementData = await context.retriveAllData();
+            var anouncementData = await context.retrieveAll(sId);
             return JsonConvert.SerializeObject(anouncementData);
             
         }
          //http://localhost:5000/api/Anouncement/1       
-        [HttpGet("{id}", Name = "AnouncementProfile")]
-        public async Task<string> getAnouncementData(string id)
+        [HttpGet("{aid}/{sid}", Name = "AnouncementProfile")]
+        public async Task<string> getAnouncementData(string aid,string sId)
         {
-            var anouncementData = await context.retrieve(id);
+            var anouncementData = await context.retrieve(aid);
             if (anouncementData == null)
                 return null;
             return JsonConvert.SerializeObject(anouncementData);        
@@ -42,7 +42,7 @@ namespace demoELiving.Controllers
         public async Task <bool > registerAnouncement([FromBody]Anouncement anouncement)//ActionResult<Anouncement>
 
         {            
-            var anouncementData = await context.retrieve(anouncement.anouncementEmail);
+            var anouncementData = await context.retrieve(anouncement.anouncementId);
                                 
 
             anouncementData= JsonConvert.SerializeObject(anouncementData);
@@ -63,7 +63,7 @@ namespace demoELiving.Controllers
          {
             
         
-           await context.update(anouncement.anouncementEmail, anouncement);
+           await context.update(anouncement.anouncementId, anouncement);
             return Ok(anouncement);
         }
     }

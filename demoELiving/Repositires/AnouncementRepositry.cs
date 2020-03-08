@@ -23,10 +23,7 @@ namespace demoELiving.Repositires
         }
         private readonly IMongoCollection<Anouncement> collection;
 
-        public async Task<object> retriveAllData()
-        {            
-            return await collection.Find(x=>true).ToListAsync();
-        }
+        
 
         public async Task<object> insert(object obj)
         {           
