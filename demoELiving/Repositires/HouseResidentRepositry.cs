@@ -51,7 +51,7 @@ namespace demoELiving.Repositires
 
         public async Task<object> update(string id, object houseResident)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.housingSocietyID == id, (HouseResident)houseResident);
+            await collection.ReplaceOneAsync(ZZ => ZZ.email == id, (HouseResident)houseResident);
             return true;
         }
 

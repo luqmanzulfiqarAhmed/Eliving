@@ -20,23 +20,23 @@ namespace demoELiving.Controllers
         {
             context = VehicleRepositry;
         }
-        [HttpGet]
-        public async Task<string> getAllVehiclesData()
+        [HttpGet("{societyId}", Name = "allVehicleProfile")]
+        public async Task<string> getAllVehiclesData(string societyId)
         {
 
-            var VehicleData = await context.retriveAllData();
+            var VehicleData = await context.retrieveAll(societyId);
             return JsonConvert.SerializeObject(VehicleData);
             
         }
-         //http://localhost:5000/api/Vehicle/1       
-        [HttpGet("{id}", Name = "VehicleProfile")]
-        public async Task<string> getVehicleData(string id)
-        {
-            var VehicleData = await context.retrieve(id);
-            if (VehicleData == null)
-                return null;
-            return JsonConvert.SerializeObject(VehicleData);        
-        }
+         
+        // [HttpGet("{id}/{societyId}", Name = "VehicleProfile")]
+        // public async Task<string> getVehicleData(string vid,string societyId)
+        // {
+        //     var VehicleData = await context.retrieve(vid);
+        //     if (VehicleData == null)
+        //         return null;
+        //     return JsonConvert.SerializeObject(VehicleData);        
+        // }
 
         [HttpPost(Name = "VehicleRegister")]
         public async Task <bool > registerVehicle([FromBody]Vehicle vehicle)//ActionResult<Vehicle>
