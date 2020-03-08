@@ -3,29 +3,35 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace demoELiving.Models
 {
     [BsonIgnoreExtraElements]
-    public class ManageComplain : Facilities{
-       public ManageComplain() { 
+    public class ManageComplain
+    {
+        public ManageComplain()
+        {
         }
-        
-        [BsonElement("facilitiesId")]
-        public string facilitiesId { get ; set ; }
-        [BsonElement("manageComplainID")]
-        public string manageComplainID { get ; set ; }
-        [BsonElement("complainId")]
-        public string complainId { set; get; }
-        [BsonElement("residentId")]
-        public string residentId { set; get; }
-        [BsonElement("adminId")]
-        public string adminId    { set; get; }
+
+        [BsonElement("complaintId")]
+        public string complaintId { get; set; }
+        [BsonElement("complaintRemarks")]
+        public string complaintRemarks { get; set; }
         [BsonElement("societyId")]
-        public string societyId  { set; get; }
-        [BsonElement("complainStatus")]
-        public string complainStatus  { set; get; }
+        public string societyId { get; set; }
+        [BsonElement("residentEmail")]
+        public string residentEmail { get; set; }
+        [BsonElement("date")]
+        public string date { set; get; }
+        [BsonElement("time")]
+        public string time { set; get; }
+        [BsonElement("userName")]
+        public string userName { set; get; }
+        [BsonElement("subjectComplaint")]
+        public string subjectComplaint { set; get; }
+        [BsonElement("descriptionComplaint")]
+        public string descriptionComplaint { set; get; }
         [BsonElement("complainSubject")]
         public string complainSubject { set; get; }
-        [BsonElement("complainDetails")]
-        public string complainDetails { set; get; }
-        
+        [BsonElement("statusComplaint")]
+        public string statusComplaint { set; get; }
+
     }
 
 

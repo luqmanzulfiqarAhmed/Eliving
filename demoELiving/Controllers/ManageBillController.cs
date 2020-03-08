@@ -21,8 +21,8 @@ namespace demoELiving.Controllers
         }
 
         [Route("[action]/{societyId}")]
-        [HttpGet("{societyId}", Name = "AllHouseResidentBillData")]
-        public async Task<string> getAllHouseResidentBillData(string societyId)
+        [HttpGet("{societyId}/{adminID}", Name = "AllHouseResidentBillData")]
+        public async Task<string> getAllHouseResidentBillData(string societyId,string adminID)
         {
             var billData = await context.retrieveAll(societyId);
             return JsonConvert.SerializeObject(billData);
@@ -30,37 +30,32 @@ namespace demoELiving.Controllers
 
         [Route("[action]/{id}")]
         [HttpGet("{id}", Name = "ResidentBill")]
-        public async Task<string> getResidentBill(string id)
+        public async Task<string> getResidentBill(string billId)
         {
 
-            var billData = await context.retrieve(id);
+            var billData = await context.retrieve(billId);
             if (billData == null)
                 return null;
             return JsonConvert.SerializeObject(billData);
         }
 
-        [HttpPost("{residentId,bill}", Name = "submitBill")]
-        public async Task<ActionResult<ManageBill>> submitBill(string residentId, ManageBill bill)
+        [HttpPost( Name = "submitBill")]
+        public async Task<ActionResult<ManageBill>> submitBill([FromBody] ManageBill bill)
         {
-            if (residentId == bill.residentId)
-            {
+            
                 //here first i will call 'calculateBill' function using bill object
                 await context.insert(bill);
-                return CreatedAtAction("submitBill", new ManageBill { bill_Id = bill.bill_Id }, bill);//just telling that this HouseResident is registered with this id
-            }
-            return BadRequest();
+                return CreatedAtAction("submitBill", new ManageBill { billId = bill.billId }, bill);//just telling that this HouseResident is registered with this id
+            
+            
         }
  
         [HttpPut( Name = "updateBillManageBill")]
-        public async Task<ActionResult> updateBill(string adminId, ManageBill bill)
+        public async Task<ActionResult> updateBill([FromBody]ManageBill bill)
         {
-            if (adminId != bill.adminId )
-            {
-                return BadRequest();
-            }
-            //here first i will call 'calculateBill' function using bill object to update bill
-            await context.update(adminId, bill);
-            return NoContent();
+            
+            await context.update(bill.societyId, bill);
+            return Ok();
         }
 
     }

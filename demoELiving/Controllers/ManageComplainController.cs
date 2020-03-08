@@ -46,14 +46,11 @@ namespace demoELiving.Controllers
         }
 
         [HttpPut(Name = "updateBill")]
-        public async Task<ActionResult> updateBill(string adminId, string societyId, ManageComplain complain)
+        public async Task<ActionResult> updateBill([FromBody]ManageComplain complain)
         {
-            if (adminId != complain.adminId && societyId != complain.societyId)
-            {
-                return BadRequest();
-            }
-            //here first i will call 'calculateBill' function using bill object to update bill
-            await context.update(adminId, complain);
+            
+            
+            await context.update(complain.residentEmail, complain);
             return NoContent();
         }
 

@@ -39,23 +39,23 @@ namespace demoELiving.Repositires
             }
         }
 
-        public async Task<object> retrieve(string id)
+        public async Task<object> retrieve(string email)
         {
-            var admin = Builders<ManageComplain>.Filter.Eq("complainId", id);
+            var admin = Builders<ManageComplain>.Filter.Eq("residentEmail", email);
 
             return await collection.Find(admin).ToListAsync();
         }
 
         //as we are retriving all societies 
-        public async Task<object> retrieveAll(string str)
+        public async Task<object> retrieveAll(string societyId)
         {
 
-            return await collection.Find(x => true).ToListAsync();
+            return await collection.Find(x => x.societyId == societyId).ToListAsync();
         }
 
-        public async Task<object> update(string id, object admin)
+        public async Task<object> update(string complainId, object complain)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.complainId == id, (ManageComplain)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.complaintId == complainId, (ManageComplain)complain);
             return true;
         }
 

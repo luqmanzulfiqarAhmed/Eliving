@@ -40,20 +40,20 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieve(string id)
         {
-            var admin = Builders<ManageBill>.Filter.Eq("Id", id);
+            var admin = Builders<ManageBill>.Filter.Eq("billId", id);
 
             return await manageBill.Find(admin).ToListAsync();
         }
 
         public async Task<object> retrieveAll(string societyId)
         {
-            var admin = Builders<ManageBill>.Filter.Eq("HousingSocietyID", societyId);
-            return await manageBill.Find(admin).ToListAsync();
+            var bill = Builders<ManageBill>.Filter.Eq("societyId", societyId);
+            return await manageBill.Find(bill).ToListAsync();
         }
 
-        public async Task<object> update(string id, object admin)
+        public async Task<object> update(string id, object bill)
         {
-            await manageBill.ReplaceOneAsync(ZZ => ZZ.bill_Id == id, (ManageBill)admin);
+            await manageBill.ReplaceOneAsync(ZZ => ZZ.billId == id, (ManageBill)bill);
             return true;
         }
     }
