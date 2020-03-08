@@ -27,8 +27,7 @@ namespace demoELiving.Models
         public string subjectComplaint { set; get; }
         [BsonElement("descriptionComplaint")]
         public string descriptionComplaint { set; get; }
-        [BsonElement("complainSubject")]
-        public string complainSubject { set; get; }
+        
         [BsonElement("statusComplaint")]
         public string statusComplaint { set; get; }
 
