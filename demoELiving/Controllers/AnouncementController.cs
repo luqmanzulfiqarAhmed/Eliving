@@ -20,19 +20,19 @@ namespace demoELiving.Controllers
         {
             context = anouncementRepositry;
         }
-        [HttpGet("{sid}", Name = "AllAnouncementProfile")]
-        public async Task<string> getAllAnouncementsData(string sId)
+        [HttpGet("{societyId}", Name = "AllAnouncementProfile")]
+        public async Task<string> getAllAnouncementsData(string societyId)
         {
 
-            var anouncementData = await context.retrieveAll(sId);
+            var anouncementData = await context.retrieveAll(societyId);
             return JsonConvert.SerializeObject(anouncementData);
             
         }
          //http://localhost:5000/api/Anouncement/1       
-        [HttpGet("{aid}/{sid}", Name = "AnouncementProfile")]
-        public async Task<string> getAnouncementData(string aid,string sId)
+        [HttpGet("{perssonEmail}/{sid}", Name = "AnouncementProfile")]
+        public async Task<string> getAnouncementData(string perssonEmail,string sId)
         {
-            var anouncementData = await context.retrieve(aid);
+            var anouncementData = await context.retrieve(perssonEmail);
             if (anouncementData == null)
                 return null;
             return JsonConvert.SerializeObject(anouncementData);        
