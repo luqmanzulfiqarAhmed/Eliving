@@ -2,7 +2,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 namespace demoELiving.Models
 {
-    
+    [BsonIgnoreExtraElements]
     public class Anouncement
     {
 
