@@ -29,6 +29,8 @@ namespace demoELiving
             services.AddScoped<AdminRepositry>();
               
             services.AddScoped<SocietyRepositry>();
+            
+            services.AddScoped<AnouncementRepositry>();
 
             services.AddScoped<PropertyRepositry>();
               
