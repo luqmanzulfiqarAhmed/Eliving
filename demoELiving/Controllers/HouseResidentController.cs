@@ -61,13 +61,10 @@ namespace demoELiving.Controllers
 
         }
         [HttpPut( Name = "updateProfilehouseResident") ]
-        public async Task <ActionResult> updateAdminProfile(string email, HouseResident houseResident)
+        public async Task <ActionResult> updateAdminProfile([FromBody] HouseResident houseResident)
         {
-            if (email != houseResident.email)
-            {
-                return BadRequest();
-            }
-            await context.update(email, houseResident);
+            
+            await context.update(houseResident.email, houseResident);
             return NoContent();        
         }
     }
