@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MongoDB.Bson;
 namespace demoELiving.Repositires
 {
 
@@ -19,7 +19,7 @@ namespace demoELiving.Repositires
 
 
         dbContext = MongoDbContext.getMongoDbContext(config);
-            collection = dbContext.getDataBase().GetCollection<HallBook>("HallBooks");
+            collection = dbContext.getDataBase().GetCollection<HallBook>("HallBook");
         }
         private readonly IMongoCollection<HallBook> collection;
         public async Task<object> delete(string id)
@@ -39,23 +39,16 @@ namespace demoELiving.Repositires
             }
         }
 
-        public async Task<object> retrieve(string id)
-        {
-            var admin = Builders<HallBook>.Filter.Eq("srId", id);
-
-            return await collection.Find(admin).ToListAsync();
-        }
-
-        //as we are retriving all societies 
+         
         public async Task<object> retrieveAll(string residentId)
         {
 
             return await collection.Find(x => x.residentId == residentId).ToListAsync();
         }
 
-        public async Task<object> update(string srid, object admin)
+        public async Task<object> update(ObjectId id, object admin)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.hallBookId == srid, (HallBook)admin);
+            await collection.ReplaceOneAsync(ZZ => ZZ.hallBookId == id, (HallBook)admin);
             return true;
         }
 

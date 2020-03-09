@@ -6,7 +6,7 @@ namespace demoELiving.Models
     public class HallBook
     {
         [BsonId]
-        public string hallBookId { get; set; }
+        public ObjectId hallBookId { get; set; }
 
 
         [BsonElement("reservationStatus")]
