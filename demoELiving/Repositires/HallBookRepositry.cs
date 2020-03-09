@@ -45,10 +45,10 @@ namespace demoELiving.Repositires
 
             return await collection.Find(x => x.residentId == residentId).ToListAsync();
         }
-public async Task<object> retrieve(string residentId,string propertyId)
+public async Task<object> retrieve(string societyId,string propertyId)
         {
              
-            var resident = Builders<HallBook>.Filter.Eq("residentId", residentId);
+            var resident = Builders<HallBook>.Filter.Eq("societyId", societyId);
             var property = Builders<HallBook>.Filter.Eq("propertyId", propertyId);
             var combine = Builders<HallBook>.Filter.And(resident,property);
             return await collection.Find(combine).ToListAsync();
