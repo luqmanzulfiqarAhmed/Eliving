@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace demoELiving.Repositires
 {
-    public class HouseResidentRepositry : InterfaceDataBase
+    public class HouseResidentRepositry 
     {
             private MongoDbContext dbContext = null;
         
@@ -45,10 +45,12 @@ namespace demoELiving.Repositires
             return await collection.Find(houseResident).ToListAsync();
         }
 
-        public async Task<object> retrieveAll(string societyId)
+        public async Task<object> retrieveAll(string societyId,string email)
         {
             var houseResident = Builders<HouseResident>.Filter.Eq("housingSocietyID", societyId);
-            return await collection.Find(houseResident).ToListAsync();
+            var houseResidentemail = Builders<HouseResident>.Filter.Eq("email", email);
+            var combine = Builders<HouseResident>.Filter.And(houseResident,houseResidentemail);
+            return await collection.Find(combine).ToListAsync();
         }
 
         public async Task<object> update(string id, object houseResident)
