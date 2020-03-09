@@ -11,7 +11,7 @@ namespace demoELiving.Models
         [BsonElement("propertyId")]
         public string propertyId { get ; set ; }
         
-        [BsonElement("propertyName")]
+        [BsonElement("propertyName")]//type
         public string propertyName { get ; set ; }
         
         [BsonElement("propertyDescription")]//no. of graves
@@ -20,7 +20,7 @@ namespace demoELiving.Models
         [BsonElement("societyId")]
         public string societyId { get ; set ; }
 
-        [BsonElement("ownerId")]
+        [BsonElement("ownerId")]//email
         public string ownerId { get ; set ; }
 
         [BsonElement("area")]

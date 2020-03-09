@@ -36,7 +36,14 @@ namespace demoELiving.Controllers
                 return null;
             return JsonConvert.SerializeObject(propertyData);        
         }
-
+[HttpGet("{societyId}/{propertyName}", Name = "propertyProfile")]
+        public async Task<string> getPropertyData(string societyId,string propertyName,string ownerId)
+        {
+            var propertyData = await context.retrieve(societyId,propertyName,ownerId);
+            if (propertyData == null)
+                return null;
+            return JsonConvert.SerializeObject(propertyData);        
+        }
         [HttpPost(Name = "propertyRegister")]
         public async Task <bool > registerProperty([FromBody]Property property)//ActionResult<Admin>
 
