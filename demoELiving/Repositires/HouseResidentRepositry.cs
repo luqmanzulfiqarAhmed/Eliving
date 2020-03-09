@@ -38,21 +38,26 @@ namespace demoELiving.Repositires
 
         public async Task<object> retrieve(string email)
         {
-            string societyId="";
+            
             var houseResident = Builders<HouseResident>.Filter.Eq("email", email);
-            var society = Builders<HouseResident>.Filter.Eq("societyId", societyId);
+            
 
             return await collection.Find(houseResident).ToListAsync();
         }
 
-        public async Task<object> retrieveAll(string societyId,string email)
+        public async Task<object> retrieveByemailAndsocietyId(string societyId,string email)
         {
             var houseResident = Builders<HouseResident>.Filter.Eq("housingSocietyID", societyId);
             var houseResidentemail = Builders<HouseResident>.Filter.Eq("email", email);
             var combine = Builders<HouseResident>.Filter.And(houseResident,houseResidentemail);
             return await collection.Find(combine).ToListAsync();
         }
-
+        public async Task<object> retrieveAll(string societyId)
+        {
+            
+        var society = Builders<HouseResident>.Filter.Eq("housingSocietyID", societyId);
+        return await collection.Find(society).ToListAsync();
+        }
         public async Task<object> update(string id, object houseResident)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.email == id, (HouseResident)houseResident);

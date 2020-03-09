@@ -19,22 +19,21 @@ namespace demoELiving.Controllers
             context = residentRepositry;
 
         }
-        [HttpGet(Name = "AllResidentsData")]
-        public async Task<string> getAllResidentsData()//all residents of each housing society
-        {
-            var residentData = await context.retriveAllData();
-            return JsonConvert.SerializeObject(residentData);            
-        }
 
-        [Route("[action]/{societyId}/{adminId}")]
+        
         [HttpGet("{societyId}/{email}", Name = "AllHouseResidentData")]
         public async Task<string> getAllHouseResidentData(string societyId,string email)
         {
-            var adminData = await context.retrieveAll(societyId,email);
-            return JsonConvert.SerializeObject(adminData);
+            if (email.Equals("all") )    
+            {
+            var residentData = await context.retrieveAll(societyId);
+            return JsonConvert.SerializeObject(residentData);    
+            }
+            var residentDataByMail = await context.retrieveByemailAndsocietyId(societyId,email);
+            return JsonConvert.SerializeObject(residentDataByMail);
         }
 
-        [Route("[action]/{email}")]
+        
         [HttpGet("{email}", Name = "houseResidentProfile")]
         public async Task<string> getHouseResidentProfile(string email)
         {
@@ -45,6 +44,7 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(houseResidentData);
         }
 
+        
         [HttpPost(Name = "registerHouseResident")]
         public async Task <bool> registerHouseResident([FromBody]HouseResident houseResident)
         {                                      
