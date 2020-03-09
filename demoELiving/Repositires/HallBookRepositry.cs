@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace demoELiving.Repositires
 {
 
-    public class HallBookRepositry : InterfaceDataBase
+    public class HallBookRepositry 
     {
             private MongoDbContext dbContext = null;
         
@@ -28,11 +28,15 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> insert(object admin)
+        public async Task<bool> insert(object hallBook)
         {
-            await collection.InsertOneAsync((HallBook)admin);
-
+            try{
+            await collection.InsertOneAsync((HallBook)hallBook);
             return true;
+            }
+            catch(Exception ex){
+            return false;
+            }
         }
 
         public async Task<object> retrieve(string id)
@@ -43,10 +47,10 @@ namespace demoELiving.Repositires
         }
 
         //as we are retriving all societies 
-        public async Task<object> retrieveAll(string str)
+        public async Task<object> retrieveAll(string residentId)
         {
 
-            return await collection.Find(x => true).ToListAsync();
+            return await collection.Find(x => x.residentId == residentId).ToListAsync();
         }
 
         public async Task<object> update(string srid, object admin)

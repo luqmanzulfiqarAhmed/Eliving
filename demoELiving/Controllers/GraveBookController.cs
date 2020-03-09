@@ -54,7 +54,7 @@ namespace demoELiving.Controllers
          
 
         
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task <ActionResult> updateAdminProfile( [FromBody]GraveBook grave)
          {
                         
