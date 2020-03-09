@@ -6,6 +6,7 @@ using demoELiving.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace demoELiving.Controllers
 {
@@ -38,8 +39,7 @@ namespace demoELiving.Controllers
         [HttpPost(Name = "submitComplain")]
         public async Task<bool> submitComplain([FromBody] ManageComplain complain)
         {
-            
-                
+                              
                bool flag = await context.insert(complain);
                 return flag;
             
@@ -50,7 +50,7 @@ namespace demoELiving.Controllers
         {
             
             
-            await context.update(complain.residentEmail, complain);
+            await context.update(complain.complaintId, complain);
             return NoContent();
         }
 

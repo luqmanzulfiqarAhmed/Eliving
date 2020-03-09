@@ -9,8 +9,10 @@ namespace demoELiving.Models
         {
         }
 
-        [BsonElement("complaintId")]
-        public string complaintId { get; set; }
+        [BsonId]
+        public ObjectId  complaintId { get; set; }
+
+
         [BsonElement("complaintRemarks")]
         public string complaintRemarks { get; set; }
         [BsonElement("societyId")]

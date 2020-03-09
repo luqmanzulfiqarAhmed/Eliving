@@ -3,8 +3,7 @@ using demoELiving.MongoDB;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using MongoDB.Bson;
 using System.Threading.Tasks;
 
 namespace demoELiving.Repositires
@@ -31,6 +30,7 @@ namespace demoELiving.Repositires
         public async Task<bool> insert(object admin)
         {
             try{
+                
              await collection.InsertOneAsync((ManageComplain)admin);
             return true;
             }
@@ -53,7 +53,7 @@ namespace demoELiving.Repositires
             return await collection.Find(x => x.societyId == societyId).ToListAsync();
         }
 
-        public async Task<object> update(string complainId, object complain)
+        public async Task<object> update(ObjectId complainId, object complain)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.complaintId == complainId, (ManageComplain)complain);
             return true;
