@@ -42,18 +42,13 @@ namespace demoELiving.Controllers
         public async Task <bool > registerAnouncement([FromBody]Anouncement anouncement)//ActionResult<Anouncement>
 
         {            
-            var anouncementData = await context.retrieve(anouncement.perssonEmail);
-                                
-
-            anouncementData= JsonConvert.SerializeObject(anouncementData);
-            if (anouncementData.ToString() == "[]")
-            {
-                 await context.insert(anouncement);                 
+                                                                    
+                bool flag= await context.insert(anouncement);                 
                  
-                 return true;
-            }
+                 return flag;
             
-            return false;
+            
+            
         }
          
 

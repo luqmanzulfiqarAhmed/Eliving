@@ -25,11 +25,15 @@ namespace demoELiving.Repositires
 
         
 
-        public async Task<object> insert(object obj)
-        {           
+        public async Task<bool> insert(object obj)
+        {         
+            try{  
              Anouncement anouncement = (Anouncement)obj;                                               
                 await collection.InsertOneAsync((Anouncement)anouncement);
                 return true;
+            }catch(Exception ex){
+                return false;
+            }
 
         }
 
