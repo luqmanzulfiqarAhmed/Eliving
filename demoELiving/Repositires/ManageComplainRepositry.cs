@@ -27,11 +27,11 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<bool> insert(object admin)
+        public async Task<bool> insert(object complain)
         {
             try{
                 
-             await collection.InsertOneAsync((ManageComplain)admin);
+             await collection.InsertOneAsync((ManageComplain)complain);
             return true;
             }
             catch(Exception e){

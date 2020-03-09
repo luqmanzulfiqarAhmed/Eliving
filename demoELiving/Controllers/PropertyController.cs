@@ -28,10 +28,10 @@ namespace demoELiving.Controllers
             
         }
               
-        [HttpGet("{propertyId}/{all}", Name = "propertyProfile")]
-        public async Task<string> getPropertyData(string propertyId,string all)
+        [HttpGet("{societyId}/{propertyName}", Name = "propertyProfile")]
+        public async Task<string> getPropertyData(string societyId,string propertyName)
         {
-            var propertyData = await context.retrieve(propertyId);
+            var propertyData = await context.retrieve(societyId,propertyName);
             if (propertyData == null)
                 return null;
             return JsonConvert.SerializeObject(propertyData);        
@@ -41,7 +41,7 @@ namespace demoELiving.Controllers
         public async Task <bool > registerProperty([FromBody]Property property)//ActionResult<Admin>
 
         {            
-            var propertyData = await context.retrieve(property.propertyId);                                
+            var propertyData = await context.retrieveByPropertyId(property.propertyId);                                
             propertyData= JsonConvert.SerializeObject(propertyData);
             if (propertyData.ToString() == "[]")
             {

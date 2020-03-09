@@ -34,10 +34,16 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> retrieve(string pid)
+        public async Task<object> retrieve(string societyId,string propertyName)
         {
-            var society = Builders<Property>.Filter.Eq("propertyId", pid);
-
+            var society = Builders<Property>.Filter.Eq("societyId", societyId);
+            var property= Builders<Property>.Filter.Eq("propertyName", propertyName);
+            var combine = Builders<Property>.Filter.And(society,property);
+            return await collection.Find(combine).ToListAsync();
+        }
+        public async Task<object> retrieveByPropertyId(string propertyId)
+        {
+            var society = Builders<Property>.Filter.Eq("propertyId", propertyId);
             return await collection.Find(society).ToListAsync();
         }
 
