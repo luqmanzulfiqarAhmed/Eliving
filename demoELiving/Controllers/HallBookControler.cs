@@ -28,6 +28,14 @@ namespace demoELiving.Controllers
             return JsonConvert.SerializeObject(HallBookData);
 
         }
+        [HttpGet("{residentId}/{hallId}", Name = "getHallBooksData")]
+        public async Task<string> getHallBooksData(string residentId,string hallId)
+        {
+
+            var HallBookData = await context.retrieve(residentId,hallId);
+            return JsonConvert.SerializeObject(HallBookData);
+
+        }
 
 
         [HttpPost(Name = "HallBookRegister")]

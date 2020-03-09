@@ -45,7 +45,14 @@ namespace demoELiving.Repositires
 
             return await collection.Find(x => x.residentId == residentId).ToListAsync();
         }
-
+public async Task<object> retrieve(string residentId,string propertyId)
+        {
+             
+            var resident = Builders<HallBook>.Filter.Eq("residentId", residentId);
+            var property = Builders<HallBook>.Filter.Eq("propertyId", propertyId);
+            var combine = Builders<HallBook>.Filter.And(resident,property);
+            return await collection.Find(combine).ToListAsync();
+        }
         public async Task<object> update(ObjectId id, object admin)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.hallBookId == id, (HallBook)admin);
