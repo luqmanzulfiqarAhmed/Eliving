@@ -20,7 +20,7 @@ namespace demoELiving.Controllers
         {
             context = hallBookRepositry;
         }
-        [HttpGet]
+        [HttpGet("{residentId}",Name = "getAllHallBooksData")]
         public async Task<string> getAllHallBooksData(string residentId)
         {
 
