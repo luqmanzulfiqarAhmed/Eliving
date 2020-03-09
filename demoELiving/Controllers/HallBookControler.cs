@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace demoELiving.Controllers
 {
-    
+
     [Route("api/HallBook")]
     [ApiController]
 
@@ -20,39 +20,35 @@ namespace demoELiving.Controllers
         {
             context = hallBookRepositry;
         }
-        [HttpGet("{residentId}",Name = "getAllHallBooksData")]
+        [HttpGet("{residentId}", Name = "getAllHallBooksData")]
         public async Task<string> getAllHallBooksData(string residentId)
         {
 
             var HallBookData = await context.retrieveAll(residentId);
             return JsonConvert.SerializeObject(HallBookData);
-            
+
         }
-         
+
 
         [HttpPost(Name = "HallBookRegister")]
-        public async Task <bool > registerHallBook([FromBody]HallBook hallBook)//ActionResult<HallBook>
+        public async Task<bool> registerHallBook([FromBody]HallBook hallBook)//ActionResult<HallBook>
 
-        {            
-            
-                 bool flag = await context.insert(hallBook);                                  
-                 return flag;
-            
-            
-            
+        {
+
+            bool flag = await context.insert(hallBook);
+            return flag;
+
+
+
         }
-         
 
-        
-        [HttpPut
-        ]
-        public async Task <ActionResult> updateHallBookProfile( [FromBody]HallBook hallBook)
-         {
-            
-        
-           await context.update(hallBook.hallBookId, hallBook);
+        [HttpPut]
+        public async Task<ActionResult> updateHallBookProfile([FromBody]HallBook hallBook)
+        {
+
+
+            await context.update(hallBook.hallBookId, hallBook);
             return Ok(hallBook);
         }
     }
 }
-    
