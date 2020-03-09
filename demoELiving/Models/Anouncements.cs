@@ -8,8 +8,8 @@ namespace demoELiving.Models
 
         public Anouncement() { }
         
-        [BsonElement("anouncementId")]
-        public string anouncementId { get; set; }
+        [BsonId]
+        public ObjectId anouncementId { get; set; }
 
 
         [BsonElement("societyId")]

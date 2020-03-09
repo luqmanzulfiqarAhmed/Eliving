@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using demoELiving.MongoDB;
-using Newtonsoft.Json;
+using MongoDB.Bson;
 namespace demoELiving.Repositires
 
 {
@@ -45,7 +45,7 @@ namespace demoELiving.Repositires
             return await collection.Find(anouncement).ToListAsync();
         }
 
-        public async Task<object> update(string id, object anouncement)
+        public async Task<object> update(ObjectId id, object anouncement)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.anouncementId == id, (Anouncement)anouncement);
             return true;
