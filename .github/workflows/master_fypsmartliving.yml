@@ -18,7 +18,7 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.0.103'
+        dotnet-version: '2.1.804'
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'fypsmartliving'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5decf107134d4deabb56ff627d2f489e }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_59639b24a9654de38ca52aa505fe81d7 }}
         package: ${{env.DOTNET_ROOT}}/myapp 
