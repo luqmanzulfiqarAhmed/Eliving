@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'fypsmartliving'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_59639b24a9654de38ca52aa505fe81d7 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d44ed5fe57ef41f385dc25957dca8aed }}
         package: ${{env.DOTNET_ROOT}}/myapp 
