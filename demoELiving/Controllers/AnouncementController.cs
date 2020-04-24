@@ -20,6 +20,15 @@ namespace demoELiving.Controllers
         {
             context = anouncementRepositry;
         }
+        [HttpGet]
+        public async Task<string> getAllannouncementsData()
+        {
+
+            var announcementData = await context.retriveAllAnnouncements();
+            return JsonConvert.SerializeObject(announcementData);
+
+        }
+
         [HttpGet("{societyId}", Name = "AllAnouncementProfile")]
         public async Task<string> getAllAnouncementsData(string societyId)
         {

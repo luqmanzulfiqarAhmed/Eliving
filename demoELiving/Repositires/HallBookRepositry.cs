@@ -22,11 +22,7 @@ namespace demoELiving.Repositires
             collection = dbContext.getDataBase().GetCollection<HallBook>("HallBook");
         }
         private readonly IMongoCollection<HallBook> collection;
-        public async Task<object> delete(string id)
-        {
-
-            return true;
-        }
+       
 
         public async Task<bool> insert(object hallBook)
         {
@@ -53,7 +49,7 @@ public async Task<object> retrieve(string societyId,string propertyId)
             var combine = Builders<HallBook>.Filter.And(resident,property);
             return await collection.Find(combine).ToListAsync();
         }
-        public async Task<object> update(ObjectId id, object admin)
+        public async Task<object> update(string id, object admin)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.hallBookId == id, (HallBook)admin);
             return true;

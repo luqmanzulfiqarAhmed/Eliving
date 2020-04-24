@@ -1,0 +1,13 @@
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.csprojAssemblyReference.cache
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cache
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.RazorAssemblyInfo.cs
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.AssemblyInfoInputs.cache
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.AssemblyInfo.cs
+E:\FYP\Eliving\demoELiving\bin\Release\netcoreapp2.1\demoELiving.deps.json
+E:\FYP\Eliving\demoELiving\bin\Release\netcoreapp2.1\demoELiving.runtimeconfig.json
+E:\FYP\Eliving\demoELiving\bin\Release\netcoreapp2.1\demoELiving.runtimeconfig.dev.json
+E:\FYP\Eliving\demoELiving\bin\Release\netcoreapp2.1\demoELiving.dll
+E:\FYP\Eliving\demoELiving\bin\Release\netcoreapp2.1\demoELiving.pdb
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.RazorTargetAssemblyInfo.cache
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.dll
+E:\FYP\Eliving\demoELiving\obj\Release\netcoreapp2.1\demoELiving.pdb

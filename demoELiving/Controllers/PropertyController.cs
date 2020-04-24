@@ -1,4 +1,5 @@
 
+
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -20,23 +21,23 @@ namespace demoELiving.Controllers
         {
             context = propertyRepositry;
         }
-        [HttpGet("{societyId}", Name = "allPropertyProfiles")]
-        public async Task<string> getAllPropertiesData(string societyId)
+        [HttpGet("{societyId}/{adminId}", Name = "allPropertyProfiles")]
+        public async Task<string> getAllPropertiesData(string societyId,string adminId)
         {
             var propertyData = await context.retrieveAll(societyId);
             return JsonConvert.SerializeObject(propertyData);
             
         }
               
-        [HttpGet("{societyId}/{propertyName}", Name = "propertyProfile")]
-        public async Task<string> getPropertyData(string societyId,string propertyName)
+        [HttpGet("{societyId}", Name = "getPropertyProfile")]
+        public async Task<string> getPropertyData(string societyId)
         {
-            var propertyData = await context.retrieve(societyId,propertyName);
+            var propertyData = await context.retrieve(societyId);
             if (propertyData == null)
                 return null;
             return JsonConvert.SerializeObject(propertyData);        
         }
-[HttpGet("{societyId}/{propertyName}", Name = "propertyProfile")]
+[HttpGet("{societyId}/{propertyName}/{ownerId}", Name = "propertyProfile")]
         public async Task<string> getPropertyData(string societyId,string propertyName,string ownerId)
         {
             var propertyData = await context.retrieve(societyId,propertyName,ownerId);
@@ -60,7 +61,7 @@ namespace demoELiving.Controllers
         [HttpPut("{id}")]
         public async Task <ActionResult> updateAdminProfile([FromBody]Property property)
          {                        
-           await context.update(property.propertyId, property);
+           await context.update(property.ownerId, property);
             return Ok(property);
         }
     }

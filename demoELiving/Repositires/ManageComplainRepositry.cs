@@ -53,7 +53,7 @@ namespace demoELiving.Repositires
             return await collection.Find(x => x.societyId == societyId).ToListAsync();
         }
 
-        public async Task<object> update(ObjectId complainId, object complain)
+        public async Task<object> update(string complainId, object complain)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.complaintId == complainId, (ManageComplain)complain);
             return true;

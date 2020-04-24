@@ -39,7 +39,7 @@ namespace demoELiving.Controllers
         }
 
         [HttpPost(Name = "AdminRegister")]
-        public async Task <bool > registerAdmin([FromBody]Admin admin)//ActionResult<Admin>
+        public async Task <bool > registerAdmin([FromBody]Admin admin)
 
         {            
             var adminData = await context.retrieve(admin.adminEmail);

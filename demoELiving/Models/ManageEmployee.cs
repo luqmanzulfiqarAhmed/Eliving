@@ -40,9 +40,11 @@ namespace demoELiving.Models
       public string employeeDateofBirth { get; set; }
       [BsonElement("societyId")]
       public string societyId { get; set; }
-      
-       
-        
+        [BsonElement("employeeRating")]
+        public string currentRating { get; set; }
+        [BsonElement("noOfFeedBacks")]
+        public string noOfFeedBack { get; set; }
+
     }
 
 }

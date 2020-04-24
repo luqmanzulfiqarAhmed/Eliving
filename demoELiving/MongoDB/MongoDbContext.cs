@@ -14,17 +14,9 @@ namespace demoELiving.MongoDB
         private static MongoDbContext mongoDb = null;
         private MongoDbContext(IConfiguration config)
         {
-            string connectionString =
-@"mongodb://smarsocietdb:OKifU92PfSKV8fLHs3gcNI9T58lc5NrzYwT7zwmJPwzUNqc6fDz00fbdvGs8iNDXBUEUtSx3LnVOloouJii6fg==@smarsocietdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
-            MongoClientSettings settings = MongoClientSettings.FromUrl(
-              new MongoUrl(connectionString)
-            );
-            settings.SslSettings =
-              new SslSettings() { EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 };
-            var mongoClient = new MongoClient(settings);
 
-
-            database = mongoClient.GetDatabase("HousingSocietyAppBuilder");
+            var client = new MongoClient("mongodb://localhost:27017");
+            database = client.GetDatabase("HousingSocietyAppBuilder");
 
         }
         public static MongoDbContext getMongoDbContext(IConfiguration config)

@@ -56,10 +56,16 @@ public async Task<object> retrieveByEmail(string email)
             return await collection.Find(admin).ToListAsync();
         }
 
-        public async Task<object> update(string email, object employee)
+        public async Task<bool> update(string email, object employee)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == email, (ManageEmployee)employee);
-            return true;
+            try
+            {
+                await collection.ReplaceOneAsync(ZZ => ZZ.employeeEmail == email, (ManageEmployee)employee);
+                return true;
+            }
+            catch (Exception ex) {
+                return false;
+            }
         }
 
     }

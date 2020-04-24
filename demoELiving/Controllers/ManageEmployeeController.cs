@@ -49,11 +49,11 @@ namespace demoELiving.Controllers
         }
 
         [HttpPut( Name = "updateEmployee")]
-        public async Task<ActionResult> updateEmployee( [FromBody]ManageEmployee manageEmployee)
+        public async Task<bool> updateEmployee( [FromBody]ManageEmployee manageEmployee)
         {            
 
-            await context.update(manageEmployee.employeeEmail, manageEmployee);
-            return NoContent();
+           bool flag =  await context.update(manageEmployee.employeeEmail, manageEmployee);
+            return flag;
         }
 
 

@@ -5,11 +5,11 @@ namespace demoELiving.Models
     [BsonIgnoreExtraElements]
     public class Anouncement
     {
-
+        
         public Anouncement() { }
         
-        [BsonId]
-        public ObjectId anouncementId { get; set; }
+        [BsonElement("anouncementId")]
+        public string anouncementId { get; set; }
 
 
         [BsonElement("societyId")]

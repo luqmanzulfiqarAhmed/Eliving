@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
+    "\\Models",
     "\\MongoDB",
     "\\Repositires"
   ],
-  "SelectedNode": "\\Controllers\\AdminController.cs",
   "PreviewInSolutionExplorer": false
 }

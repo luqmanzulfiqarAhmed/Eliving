@@ -23,7 +23,10 @@ namespace demoELiving.Repositires
         }
         private readonly IMongoCollection<Anouncement> collection;
 
-        
+        public async Task<object> retriveAllAnnouncements()
+        {
+            return await collection.Find(x => true).ToListAsync();
+        }
 
         public async Task<bool> insert(object obj)
         {         
@@ -49,7 +52,7 @@ namespace demoELiving.Repositires
             return await collection.Find(anouncement).ToListAsync();
         }
 
-        public async Task<object> update(ObjectId id, object anouncement)
+        public async Task<object> update(string id, object anouncement)
         {
             await collection.ReplaceOneAsync(ZZ => ZZ.anouncementId == id, (Anouncement)anouncement);
             return true;

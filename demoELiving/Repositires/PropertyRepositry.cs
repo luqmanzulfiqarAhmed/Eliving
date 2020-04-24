@@ -2,9 +2,7 @@ using demoELiving.Models;
 using demoELiving.MongoDB;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using MongoDB.Bson;
 using System.Threading.Tasks;
 
 namespace demoELiving.Repositires
@@ -34,12 +32,12 @@ namespace demoELiving.Repositires
             return true;
         }
 
-        public async Task<object> retrieve(string societyId,string propertyName)
+        public async Task<object> retrieve(string societyId)
         {
             var society = Builders<Property>.Filter.Eq("societyId", societyId);
-            var property= Builders<Property>.Filter.Eq("propertyName", propertyName);
-            var combine = Builders<Property>.Filter.And(society,property);
-            return await collection.Find(combine).ToListAsync();
+            //var property= Builders<Property>.Filter.Eq("propertyName", propertyName);
+            //var combine = Builders<Property>.Filter.And(society,property);
+            return await collection.Find(society).ToListAsync();
         }
         public async Task<object> retrieve(string societyId,string propertyName,string ownerId)
         {
@@ -49,7 +47,7 @@ namespace demoELiving.Repositires
             var combine = Builders<Property>.Filter.And(society,property,owner);
             return await collection.Find(combine).ToListAsync();
         }
-        public async Task<object> retrieveByPropertyId(string propertyId)
+        public async Task<object> retrieveByPropertyId(ObjectId propertyId)
         {
             var society = Builders<Property>.Filter.Eq("propertyId", propertyId);
             return await collection.Find(society).ToListAsync();
@@ -61,9 +59,9 @@ namespace demoELiving.Repositires
             return await collection.Find(society).ToListAsync();
         }
 
-        public async Task<object> update(string id, object society)
+        public async Task<object> update(string ownerId, object society)
         {
-            await collection.ReplaceOneAsync(ZZ => ZZ.propertyId == id, (Property)society);
+            await collection.ReplaceOneAsync(ZZ => ZZ.ownerId == ownerId, (Property)society);
             return true;
         }
     }

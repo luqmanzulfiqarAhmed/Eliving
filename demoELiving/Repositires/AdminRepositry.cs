@@ -18,7 +18,7 @@ namespace demoELiving.Repositires
         {
 
             dbContext = MongoDbContext.getMongoDbContext(config);//geting singletone object of database
-            collection = dbContext.getDataBase().GetCollection<Admin>("collection");//use singletone object to get database 
+            collection = dbContext.getDataBase().GetCollection<Admin>("Admin");//use singletone object to get database 
             //and call that database to get collection of Admin
         }
         private readonly IMongoCollection<Admin> collection;

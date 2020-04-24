@@ -5,8 +5,8 @@ namespace demoELiving.Models
     [BsonIgnoreExtraElements]
     public class HallBook
     {
-        [BsonId]
-        public ObjectId hallBookId { get; set; }
+        [BsonElement("hallBookId")]
+        public string hallBookId { get; set; }
 
 
         [BsonElement("reservationStatus")]
