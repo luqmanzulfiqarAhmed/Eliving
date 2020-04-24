@@ -47,7 +47,7 @@ namespace demoELiving.Repositires
             var combine = Builders<Property>.Filter.And(society,property,owner);
             return await collection.Find(combine).ToListAsync();
         }
-        public async Task<object> retrieveByPropertyId(ObjectId propertyId)
+        public async Task<object> retrieveByPropertyId(string propertyId)
         {
             var society = Builders<Property>.Filter.Eq("propertyId", propertyId);
             return await collection.Find(society).ToListAsync();
